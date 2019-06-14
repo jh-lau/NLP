@@ -13,7 +13,15 @@ def poker(hands):
     :param hands:
     :return: return the best hand: poker([hand,...]) => hand
     """
-    return max(hands, key=hand_rank)
+    return all_max(hands, key=hand_rank)
+
+
+def all_max(iterable, key=None):
+    """
+    :param iterable:
+    :param key:
+    :return: return a list of all items equal to the max of the iterable
+    """
 
 
 def hand_rank(hand):
@@ -49,7 +57,7 @@ def card_ranks(hand):
     """
     ranks = ['--23456789TJQKA'.index(r) for r, _ in hand]
     ranks.sort(reverse=True)
-    return ranks
+    return [5, 4, 3, 2, 1] if ranks == [14, 5, 4, 3, 2] else ranks
 
 
 def straight(ranks):
@@ -105,8 +113,18 @@ def test():
     fh = 'TD TC TH 7C 7D'.split()
     # two pair
     tp = '5S 5D 9H 9C 6S'.split()
+    # A-5 straight
+    s1 = 'AS 2S 3S 4S 5C'.split()
+    # 2-6 straight
+    s2 = '2C 3C 4C 5S 6S'.split()
+    # A high
+    ah = 'AS 2S 3S 4S 6C'.split()
+    # 7 high
+    sh = '2S 3S 4S 6C 7D'.split()
     fkranks = card_ranks(fk)
     tpranks = card_ranks(tp)
+    assert poker([s1, s2, ah, sh]) == s2
+    assert poker([s1, ah, sh]) == s1
     assert kind(4, fkranks) == 9
     assert kind(3, fkranks) is None
     assert kind(2, fkranks) is None
