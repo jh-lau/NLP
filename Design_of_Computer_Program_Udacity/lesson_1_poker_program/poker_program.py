@@ -160,7 +160,7 @@ def hand_percentages(n=700 * 1000):
 
 
 def hand_rank_new(hand):
-    groups = group(['--23456789TJQKA'.index(r) for r, s in hand])
+    groups = group(['--23456789TJQKA'.index(r) for r, _ in hand])
     counts, ranks = unzip(groups)
     if ranks == (14, 5, 4, 3, 2):
         ranks = (5, 4, 3, 2, 1)
@@ -194,6 +194,8 @@ def unzip(pairs):
 
 
 def test():
+    # five of a kind with wild cards or multiple decks
+    fk_5 = '5T 5C 5H 5D 5H'.split()
     # straight flush
     sf = '6C 7C 8C 9C TC'.split()
     sf_2 = '6D 7D 8D 9D TD'.split()
@@ -213,36 +215,38 @@ def test():
     sh = '2S 3S 4S 6C 7D'.split()
     fk_ranks = card_ranks(fk)
     tp_ranks = card_ranks(tp)
-    assert poker([s1, s2, ah, sh]) == [s2]
-    assert poker([s1, ah, sh]) == [s1]
-    assert kind(4, fk_ranks) == 9
-    assert kind(3, fk_ranks) is None
-    assert kind(2, fk_ranks) is None
-    assert kind(1, fk_ranks) == 7
-    assert two_pair(fk_ranks) is None
-    assert two_pair(tp_ranks) == (9, 5)
-    assert straight([9, 8, 7, 6, 5]) is True
-    assert straight([9, 8, 8, 6, 5]) is False
-    assert flush(sf) is True
-    assert flush(fk) is False
-    assert card_ranks(sf) == [10, 9, 8, 7, 6]
-    assert card_ranks(fk) == [9, 9, 9, 9, 7]
-    assert card_ranks(fh) == [10, 10, 10, 7, 7]
-    assert poker([sf, fk, fh]) == [sf]
-    assert poker([fk, fh]) == [fk]
-    assert poker([fh, fh]) == [fh, fh]
-    assert poker([sf]) == [sf]
-    assert poker([sf] + 99 * [fh]) == [sf]
-    assert poker([sf, sf_2]) == [sf, sf_2]
-    assert poker_old([sf, sf_2]) == sf
-    assert hand_rank(sf) == (8, 10)
-    assert hand_rank(fk) == (7, 9, 7)
-    assert hand_rank(fh) == (6, 10, 7)
-    return 'test pass'
+    print(poker([fk_5]))
+    # assert poker([fk_5]) == [9, fk_5]
+    # assert poker([s1, s2, ah, sh]) == [s2]
+    # assert poker([s1, ah, sh]) == [s1]
+    # assert kind(4, fk_ranks) == 9
+    # assert kind(3, fk_ranks) is None
+    # assert kind(2, fk_ranks) is None
+    # assert kind(1, fk_ranks) == 7
+    # assert two_pair(fk_ranks) is None
+    # assert two_pair(tp_ranks) == (9, 5)
+    # assert straight([9, 8, 7, 6, 5]) is True
+    # assert straight([9, 8, 8, 6, 5]) is False
+    # assert flush(sf) is True
+    # assert flush(fk) is False
+    # assert card_ranks(sf) == [10, 9, 8, 7, 6]
+    # assert card_ranks(fk) == [9, 9, 9, 9, 7]
+    # assert card_ranks(fh) == [10, 10, 10, 7, 7]
+    # assert poker([sf, fk, fh]) == [sf]
+    # assert poker([fk, fh]) == [fk]
+    # assert poker([fh, fh]) == [fh, fh]
+    # assert poker([sf]) == [sf]
+    # assert poker([sf] + 99 * [fh]) == [sf]
+    # assert poker([sf, sf_2]) == [sf, sf_2]
+    # assert poker_old([sf, sf_2]) == sf
+    # assert hand_rank(sf) == (8, 10)
+    # assert hand_rank(fk) == (7, 9, 7)
+    # assert hand_rank(fh) == (6, 10, 7)
+    # return 'test pass'
 
 
 if __name__ == '__main__':
-    print(test())
-    print(deal(3))
-    print(deal(4, 7))
-    hand_percentages(7000)
+    test()
+    # print(deal(3))
+    # print(deal(4, 7))
+    # hand_percentages(7000)
