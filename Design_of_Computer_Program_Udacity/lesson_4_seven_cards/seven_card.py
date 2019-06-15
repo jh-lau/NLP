@@ -61,9 +61,9 @@ def kind(n, ranks):
 
 def two_pair(ranks):
     pair = kind(2, ranks)
-    lowpair = kind(2, list(reversed(ranks)))
-    if pair and lowpair != pair:
-        return pair, lowpair
+    low_pair = kind(2, list(reversed(ranks)))
+    if pair and low_pair != pair:
+        return pair, low_pair
     else:
         return None
 
