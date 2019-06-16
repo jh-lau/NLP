@@ -11,7 +11,8 @@ def timed_call(fn, *args):
     start = time.perf_counter_ns()
     result = fn(*args)
     end = time.perf_counter_ns()
-    return end - start, result
+    tot = (end - start) / 10 ** 9
+    return tot, result
 
 
 def average(numbers):
@@ -49,12 +50,14 @@ def all_ints(start=1, end=None):
 def instrument_fn(fn, *args):
     c.starts, c.items = 0, 0
     result = fn(*args)
+    # todo
     print("%s got %s with %5d iters over %7d items" % (fn.__name__, result, c.starts, c.items))
 
 
 def c(sequence):
     """Generate items in sequence; keeping counts as we go. c.start is the number of
     sequences started; c.items is number of items generated."""
+    # todo
     c.start += 1
     for item in sequence:
         c.items += 1
