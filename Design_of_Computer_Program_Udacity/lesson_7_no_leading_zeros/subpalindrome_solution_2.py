@@ -1,5 +1,5 @@
 """
-  User: Liujianhan
+  User: functioniujianhan
   Time: 16:22
  """
 __author__ = 'liujianhan'
@@ -28,15 +28,15 @@ def longest_sub_palindrome_slice(text):
 
 
 def test():
-    L = longest_sub_palindrome_slice
-    assert L('racecar') == (0, 7)
-    assert L('Racecar') == (0, 7)
-    assert L('RacecarX') == (0, 7)
-    assert L('Race carr') == (7, 9)
-    assert L('') == (0, 0)
-    assert L('something rac e car going') == (8, 21)
-    assert L('xxxxx') == (0, 5)
-    assert L('Mad am I ma dam.') == (0, 15)
+    function = longest_sub_palindrome_slice
+    assert function('racecar') == (0, 7)
+    assert function('Racecar') == (0, 7)
+    assert function('RacecarX') == (0, 7)
+    assert function('Race carr') == (7, 9)
+    assert function('') == (0, 0)
+    assert function('something rac e car going') == (8, 21)
+    assert function('xxxxx') == (0, 5)
+    assert function('Mad am I ma dam.') == (0, 15)
     return 'tests pass'
 
 
