@@ -72,4 +72,5 @@ def test():
 
 
 if __name__ == '__main__':
-    print(test())
+    # print(test())
+    search('baa*!', 'Sheep said baaaa!')
