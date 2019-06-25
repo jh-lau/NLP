@@ -3,6 +3,7 @@
   Time: 16:39
  """
 __author__ = 'liujianhan'
+import doctest
 
 
 def pour_problem(X, Y, goal, start=(0, 0)):
@@ -36,5 +37,17 @@ def successors(x, y, X, Y):
     (x, y) state, and how."""
     assert x <= X and y <= Y
     return {((0, y + x) if y + x <= Y else (x - (Y - y), y + (Y - y))): 'X->Y',
-            ((x + y, 0) if x + y <= X else (x + (X - x), y - (X - x))): 'X<-Y',
+            ((x + y, 0) if x + y <= X else (x + (X - x), y - (X - x))): 'Y->X',
             (X, y): 'fill X', (x, Y): 'fill Y', (0, y): 'empty X', (x, 0): 'empty Y'}
+
+
+class Test: """
+>>> successors(0, 0, 4, 9)
+{(0, 0): 'empty Y', (4, 0): 'fill X', (0, 9): 'fill Y'}
+"""
+
+
+if __name__ == '__main__':
+    print(doctest.testmod())
+    print(pour_problem(4, 9, 6))
+    print(pour_problem(7, 9, 8))
