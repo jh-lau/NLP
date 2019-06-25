@@ -6,7 +6,7 @@ from function_process_time import RuntimeTest
 
 __author__ = 'liujianhan'
 import itertools
-from lesson_6_zebra_puzzle.time_calls import timed_calls, timed_call
+from lesson_2.lesson_6_zebra_puzzle.time_calls import timed_calls, timed_call
 
 
 def im_right(h1, h2):
