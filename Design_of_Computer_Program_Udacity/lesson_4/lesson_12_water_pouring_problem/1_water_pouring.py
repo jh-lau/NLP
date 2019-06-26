@@ -6,6 +6,15 @@ __author__ = 'liujianhan'
 import doctest
 
 
+def successors(x, y, X, Y):
+    """Return a dict of {state: action} pairs describing what can be reached from the
+    (x, y) state, and how."""
+    assert x <= X and y <= Y
+    return {((0, y + x) if y + x <= Y else (x - (Y - y), y + (Y - y))): 'X->Y',
+            ((x + y, 0) if x + y <= X else (x + (X - x), y - (X - x))): 'Y->X',
+            (X, y): 'fill X', (x, Y): 'fill Y', (0, y): 'empty X', (x, 0): 'empty Y'}
+
+
 def pour_problem(X, Y, goal, start=(0, 0)):
     """X and Y are the capacity of glasses; (x, y) is current fill levels
     and represents a state. The goal is a level that can be in either glass.
@@ -30,15 +39,6 @@ def pour_problem(X, Y, goal, start=(0, 0)):
 
 
 Fail = []
-
-
-def successors(x, y, X, Y):
-    """Return a dict of {state: action} pairs describing what can be reached from the
-    (x, y) state, and how."""
-    assert x <= X and y <= Y
-    return {((0, y + x) if y + x <= Y else (x - (Y - y), y + (Y - y))): 'X->Y',
-            ((x + y, 0) if x + y <= X else (x + (X - x), y - (X - x))): 'Y->X',
-            (X, y): 'fill X', (x, Y): 'fill Y', (0, y): 'empty X', (x, 0): 'empty Y'}
 
 
 class Test: """
