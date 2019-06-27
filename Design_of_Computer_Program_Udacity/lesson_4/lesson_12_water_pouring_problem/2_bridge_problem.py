@@ -57,20 +57,45 @@ def bridge_problem(here):
     frontier = [[(here, frozenset(), 0)]]  # ordered list of paths we have blazed
     if not here:
         return frontier[0]
+
     while frontier:
         path = frontier.pop(0)
+
+        for (state, action) in bridge_successors(path[-1]).items():
+            if state not in explored:
+                here, there, t = state
+                explored.add(state)
+                path2 = path + [action, state]
+                if not here:  # That is, nobody left here
+                    return path2
+                else:
+                    frontier.append(path2)
+                    frontier.sort(key=elapsed_time)
+    return []
+
+
+def bridge_problem_2(here):
+    """Tests for the goal later, after pulling a state off the frontier, not when we're about to put it on the
+    frontier."""
+    here = frozenset(here) | frozenset(['light'])
+    explored = set()
+    frontier = [[(here, frozenset(), 0)]]
+    if not here:
+        return frontier[0]
+
+    while frontier:
+        path = frontier.pop(0)
+
         here_1, there_1, t1 = state_1 = path[-1]
         if not here_1 or here_1 == {'light'}:  # Check for solution when we pull best path
             return path
+
         for (state, action) in bridge_successors(path[-1]).items():
             if state not in explored:
                 here, there, t = state
                 explored.add(state)
                 path2 = path + [action, state]
                 # Don't check for solution when extend a path
-                # if not here:  # That is, nobody left here
-                #     return path2
-                # else:
                 frontier.append(path2)
                 frontier.sort(key=elapsed_time)
     return []
