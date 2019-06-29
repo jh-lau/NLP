@@ -92,7 +92,7 @@ def bridge_problem_2(here):
 
         for (state, action) in bridge_successors(path[-1]).items():
             if state not in explored:
-                here, there, t = state
+                # here, there, t = state
                 explored.add(state)
                 path2 = path + [action, state]
                 # Don't check for solution when extend a path
