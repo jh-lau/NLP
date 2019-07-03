@@ -54,7 +54,11 @@ def segment_match(pattern, saying):
     if not rest:
         return (seg_pat, saying), len(saying)
     for i, token in enumerate(saying):
-        if rest[0] == token and is_match(rest[1:], saying[(i + 1):]):
+        # Modify condition like pat_match_with_seg('?*X hello'.split(), 'hi hello you'.split()) raise an index error.
+        try:
+            if rest[0] == token and is_match(rest[1:], saying[(i + 1):]):
+                return (seg_pat, saying[:i]), i
+        except IndexError:
             return (seg_pat, saying[:i]), i
     return (seg_pat, saying), len(saying)
 
@@ -113,6 +117,8 @@ def get_response_star(saying, response_rules=rule_responses):
         temp = pat_match_with_seg(question.split(), saying.split())
         if len(temp) > 1 and None not in temp:
             result = substitute(random.choice(answer).split(), pat_to_dict(temp))
+    if not result:
+        return random.choice(response_rules['?*x'])
     return ' '.join(result)
 
 
@@ -135,18 +141,27 @@ def new_split(string):
 
 
 test_rules = {
-    # '?*x好的?*y': ['好的', '你是一个很正能量的人'],
-    '?*x就像?*y': ['你觉得?x和?y有什么相似性？', '?x和?y真的有关系吗？', '怎么说？']
+    '?*x好的?*y': ['好的', '你是一个很正能量的人'],
+    # '?*x就像?*y': ['你觉得?x和?y有什么相似性？', '?x和?y真的有关系吗？', '怎么说？']
 }
 
 
-def get_response_star_new(saying, response_rules=test_rules):
+def get_response_star_new(saying, response_rules=rule_responses):
     result = []
     last = []
     for question, answer in response_rules.items():
+
         temp = pat_match_with_seg(new_split(question), new_split(saying))
+        # pop the ('?x", '') tuple in the pattern match list.
+        for k, v in temp:
+            if not v:
+                temp.pop(temp.index((k, v)))
         if len(temp) > 1 and None not in temp:
             result = substitute(new_split(random.choice(answer)), pat_to_dict(temp))
+
+    if not result:
+        return random.choice(response_rules['?*x'])
+
     for each in result:
         last.append(''.join(each.split()))
     return ''.join(last)
