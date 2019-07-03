@@ -5,6 +5,7 @@
 import random
 from collections import defaultdict
 from Week_01_0630.assignments.assignment_02.rule_responses import rule_responses
+from Week_01_0630.assignments.assignment_02.chinese_cut_single import cut_single
 import jieba
 
 __author__ = 'liujianhan'
@@ -79,11 +80,11 @@ def pat_to_dict(patterns):
     return {k: ' '.join(v) if isinstance(v, list) else v for k, v in patterns}
 
 
-def substitute(saying, parsed_rules):
+def substitute(rule, parsed_rules):
     """Substitute the variable in rule with dict value in parsed_rules"""
-    if not saying:
+    if not rule:
         return []
-    return [parsed_rules.get(saying[0], saying[0])] + substitute(saying[1:], parsed_rules)
+    return [parsed_rules.get(rule[0], rule[0])] + substitute(rule[1:], parsed_rules)
 
 
 defined_patterns = {
@@ -116,14 +117,15 @@ def get_response_star(saying, response_rules=rule_responses):
 
 
 def new_split(string):
-    """Cut input chinese phrase.e.g: '?*x我愿意?*y清华post?' --> ['?*x','我','愿意','?&y','清华', 'post', '?']"""
     result = []
     temp = list(jieba.cut(string))
     for i, each in enumerate(temp):
-        if each == '?' and i + 1 < len(temp):
-            try:
+        if each == '?':
+            if len(temp) == i + 1:
+                result.append(each)
+            elif temp[i + 1] == '*':
                 result.append(temp[i] + temp[i + 1] + temp[i + 2])
-            except IndexError:
+            elif temp[i + 1].isalpha():
                 result.append(temp[i] + temp[i + 1])
         elif len(each) == 1 and (each == '*' or each.isupper() or each.islower()):
             continue
@@ -132,7 +134,13 @@ def new_split(string):
     return result
 
 
-def get_response_star_new(saying, response_rules=rule_responses):
+test_rules = {
+    # '?*x好的?*y': ['好的', '你是一个很正能量的人'],
+    '?*x就像?*y': ['你觉得?x和?y有什么相似性？', '?x和?y真的有关系吗？', '怎么说？']
+}
+
+
+def get_response_star_new(saying, response_rules=test_rules):
     result = []
     last = []
     for question, answer in response_rules.items():
@@ -152,7 +160,10 @@ if __name__ == '__main__':
     #                  pat_to_dict(pat_match_with_seg('I need ?*X'.split(),
     #                                                 "I need an iPhone".split()))))
     # print(get_response_star('world hello yes'))
-    print(get_response_star_new('曾经我记得这个人'))
+    # print(get_response_star_new('你一直这么干'))
+    print(get_response_star_new('我妈妈对我很好'))
+    # print(get_response_star_new('我讨厌他'))
+    # print(get_response_star_new('曾经我记得这个人'))
     # print(new_split('你觉得我是帅哥吗'))
     # print(pat_match_with_seg(new_split('你觉得?*y有什么意义呢?'), new_split('你觉得睡觉有什么意义呢?')))
     # print(new_split('你觉得?*y有什么意义呢?'))
