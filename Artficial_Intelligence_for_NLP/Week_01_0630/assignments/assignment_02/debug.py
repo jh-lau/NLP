@@ -167,6 +167,60 @@ def get_response_star_new(saying, response_rules=rule_responses):
     return ''.join(last)
 
 
+def get_response_star_new_v2(saying, response_rules=rule_responses):
+    patterns = response_rules.keys()
+    result = []
+    last = []
+    saying_list = [saying] * len(patterns)
+    set_saying_list = list(map(set, list(map(new_split, saying_list))))
+    set_pattern_list = list(map(set, list(map(new_split, list(patterns)))))
+    union_best_pattern = list(map(lambda x, y: x & y, set_saying_list, set_pattern_list))
+
+    best_pattern = set_pattern_list[union_best_pattern.index(max(union_best_pattern))]
+
+    for k, v in response_rules.items():
+        if set(new_split(k)) == best_pattern:
+            temp = pat_match_with_seg(new_split(k), new_split(saying))
+            result = substitute(new_split(random.choice(v)), pat_to_dict(temp))
+
+    if not result:
+        return random.choice(response_rules['?*x'])
+    for each in result:
+        last.append(''.join(each.split()))
+    return ''.join(last)
+
+
+def get_response_star_new_v3(saying, response_rules=rule_responses):
+    patterns = response_rules.keys()
+    result = []
+    last = []
+    saying_list = [saying] * len(patterns)
+    set_saying_list = list(map(set, list(map(new_split, saying_list))))
+    set_pattern_list = list(map(set, list(map(new_split, list(patterns)))))
+    union_best_pattern = list(map(lambda x, y: x & y, set_saying_list, set_pattern_list))
+    # 此处union_best_pattern中的中文两个词若被jieba分词成一个词，如“讨厌”, 则会判定成一个词，会出现和其他
+    # 单个匹配的高频词如“我”等雷同，导致模式被该种模式截获
+    temp_union_1 = list(map(list, union_best_pattern))
+
+    def get_max(x):
+        return len(x[0]) if x else -1
+
+    temp_union_2 = set(max(temp_union_1, key=get_max))
+
+    best_pattern = set_pattern_list[union_best_pattern.index(temp_union_2)]
+
+    for k, v in response_rules.items():
+        if set(new_split(k)) == best_pattern:
+            temp = pat_match_with_seg(new_split(k), new_split(saying))
+            result = substitute(new_split(random.choice(v)), pat_to_dict(temp))
+
+    if not result:
+        return random.choice(response_rules['?*x'])
+    for each in result:
+        last.append(''.join(each.split()))
+    return ''.join(last)
+
+
 if __name__ == '__main__':
     # print(segment_match('?*P is very good'.split(), 'My dog and my cat is very good'.split()))
     # print(pat_match_with_seg('?*X hello ?*Y'.split(), 'wold hello yes'.split()))
@@ -176,10 +230,14 @@ if __name__ == '__main__':
     #                                                 "I need an iPhone".split()))))
     # print(get_response_star('world hello yes'))
     # print(get_response_star_new('你一直这么干'))
-    print(get_response_star_new('我妈妈对我很好'))
+    # print(get_response_star_new('我妈妈对我很好'))
     # print(get_response_star_new('我讨厌他'))
     # print(get_response_star_new('曾经我记得这个人'))
     # print(new_split('你觉得我是帅哥吗'))
     # print(pat_match_with_seg(new_split('你觉得?*y有什么意义呢?'), new_split('你觉得睡觉有什么意义呢?')))
     # print(new_split('你觉得?*y有什么意义呢?'))
     # print(new_split('你觉得睡觉有什么意义呢?'))
+    print(get_response_star_new_v2('天哪我不能这样'))
+    print(get_response_star_new_v2('为什么我不能飞'))
+    print(get_response_star_new_v2('你说我是神吗'))
+    print(get_response_star_new_v3('我讨厌他'))
