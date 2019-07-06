@@ -3,3 +3,4 @@ config.*
 .pytest_cache
 __pycache__
 .ipynb_checkpoints/
+References/*/*.pdf
