@@ -21,7 +21,10 @@ def get_metro_map(url):
         temp = link.text.split()
         if '未开通' in temp[0]:
             continue
-        temp[0] = temp[0].split('线')[0] + '线'
+        if 'S2' in temp[0]:
+            continue
+        if '外环' in temp[0]:
+            temp[0] = temp[0].split('线')[0] + '线'
         metro_map[temp[0]] = temp[1:]
     return metro_map
 
@@ -49,6 +52,15 @@ def get_all_line_geoinfo(metro_map):
         metro_line_geoinfo[metro_line] = line_info
         print(metro_line)
     return metro_line_geoinfo
+
+
+def zip_station(metro_line):
+    connected_station = []
+    station1 = list(metro_line.keys())
+    station2 = list(metro_line.keys())
+    station2.pop(0)
+    result = list(zip(station1, station2))
+    return result
 
 
 if __name__ == '__main__':
