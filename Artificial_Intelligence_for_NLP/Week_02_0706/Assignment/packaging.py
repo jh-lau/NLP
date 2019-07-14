@@ -13,15 +13,18 @@ url = 'https://dt.8684.cn/bj'
 
 
 def get_metro_map(url):
+    """
+    Return {metro_line_1: {station, ....}, ...}.
+    :param url: metro web page url
+    :return: {str: {str,...}, ....}
+    """
     metro_map = {}
     response = requests.get(url)
     response.encoding = 'utf-8'
     soup_content = BeautifulSoup(response.text, features="lxml")
     for link in soup_content.find_all(class_='sLink'):
         temp = link.text.split()
-        if '未开通' in temp[0]:
-            continue
-        if 'S2' in temp[0]:
+        if '未开通' in temp[0] or 'S2' in temp[0]:
             continue
         if '外环' in temp[0]:
             temp[0] = temp[0].split('线')[0] + '线'
@@ -30,6 +33,11 @@ def get_metro_map(url):
 
 
 def get_geoinfo_gaode(address):
+    """
+    Return the latitude and longitude of address.
+    :param address: str
+    :return: float(latitude), float(longitude)
+    """
     output_type = json
     uri = f"https://restapi.amap.com/v3/geocode/geo?address={address}&output={output_type}&key={gaode_api}"
     r = requests.get(uri).text
@@ -39,6 +47,12 @@ def get_geoinfo_gaode(address):
 
 
 def get_single_line_geoinfo(metro_line, stations):
+    """
+    Return dictionary with format of {metro_line_1: (lat, lng),...)}
+    :param metro_line: str
+    :param stations: dict
+    :return: dict
+    """
     metro_geoinfo = {}
     for station in stations:
         metro_geoinfo[station] = get_geoinfo_gaode(metro_line + station + '地铁站')
@@ -46,6 +60,11 @@ def get_single_line_geoinfo(metro_line, stations):
 
 
 def get_all_line_geoinfo(metro_map):
+    """
+    Return all metro lines geoinfo with format {metro_line: {station,...}, ...}
+    :param metro_map: dict
+    :return: dict
+    """
     metro_line_geoinfo = {}
     for metro_line, stations in metro_map.items():
         line_info = get_single_line_geoinfo(metro_line, metro_map[metro_line])
@@ -55,7 +74,11 @@ def get_all_line_geoinfo(metro_map):
 
 
 def zip_station(metro_line):
-    connected_station = []
+    """
+    Return a list of previous station and next station combined. [(a, b), (b, c), ...]
+    :param metro_line: str
+    :return: list
+    """
     station1 = list(metro_line.keys())
     station2 = list(metro_line.keys())
     station2.pop(0)
