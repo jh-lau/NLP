@@ -6,6 +6,7 @@
 #### 2.[Assignment2 - 北京地铁智能搜索实现](./Week_02_0706/Assignment/metro_path_assignment.ipynb)
 ### 3.Week3 assignments
 #### 1.[Assignment1 - 动态规划](./Week_03_0713/Assignment/Assignment-03.ipynb)
+##### 1.1 [动态规划表的几种应用](./Week_03_0713/Assignment/dynamic_programming.ipynb)
 
 
 

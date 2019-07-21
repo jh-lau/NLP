@@ -37,5 +37,29 @@ def edit_distance(string1, string2):
     return len(string1) if string1 else len(string2)
 
 
+def parse_solution(solution, str1, str2):
+    temp = str1, str2
+    result = []
+    while temp in solution:
+        action = solution[temp]
+
+        if not action:  # same character do nothing
+            temp = temp[0][:-1], temp[1][:-1]
+            if len(temp[0]) == 1:
+                break
+        elif action.startswith('SUB'):
+            result.append((temp, action))
+            temp = temp[0][:-1], temp[1][:-1]
+        elif action.startswith('ADD'):
+            result.append((temp, action))
+            temp = temp[0], temp[1][:-1]
+        else:
+            result.append((temp, action))
+            temp = temp[0][:-1], temp[1]
+
+    return result
+
+
 if __name__ == '__main__':
-    edit_distance('aebd', 'abcd')
+    edit_distance('ago', 'got')
+    parse_solution(solution_, 'ago', 'got')
