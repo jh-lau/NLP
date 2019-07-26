@@ -2,9 +2,8 @@
 >Perhaps the most important principle for the good algorithm designer is to refuse to be content.
 1. [Karatsuba Multiplication](https://zh.wikipedia.org/wiki/Karatsuba%E7%AE%97%E6%B3%95)
 2. quizzes
-
-    ![1.1](./1_introduction/quizzes/1.1.png)
-    ![1.2](./1_introduction/quizzes/1.2.png)
+* ![1.1](./1_introduction/quizzes/1.1.png)
+* ![1.2](./1_introduction/quizzes/1.2.png)
 ## 2. ASYMPTOTIC ANALYSIS
 ## 3. DIVIDE&CONQUER ALGORITHMS
 
