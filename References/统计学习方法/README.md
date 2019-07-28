@@ -1,1 +1,2 @@
-### Notes during reading.
+## Implementing with python.
+
