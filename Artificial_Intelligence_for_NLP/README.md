@@ -7,8 +7,8 @@
 ### 3.Week3 assignments
 #### 1.[Assignment1 - 动态规划](./Week_03_0713/Assignment/Assignment-03.ipynb)
 ##### 1.1 [动态规划表的几种应用](./Week_03_0713/Assignment/dynamic_programming.ipynb)
-
-
+### 4.Week4 assignments
+#### 1.[Assignment1 - 词向量过程](./Week_04_0727/Assignment/word2vec-Beginning.ipynb)
 
 
 
