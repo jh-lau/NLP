@@ -1,6 +1,7 @@
-## [Reference](https://web.stanford.edu/~jurafsky/slp3/)
+## [Reference - Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/)
 * [Dan Jurafsky](https://web.stanford.edu/~jurafsky/)
 * [Course Link](https://pan.baidu.com/s/1VjCFjwZYWkva6KBrohK8Lw)
+> Consider as basic NLP course.
 
 ---
 ## 1.week_01
