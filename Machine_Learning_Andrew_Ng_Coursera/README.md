@@ -4,7 +4,7 @@
 
 ### Reorganize file structure.
 
-### Implement course code in python instead of Matlab.
+### Implement course code in python3 instead of Matlab.
 
 ---
 #### 1.Linear regression
@@ -13,3 +13,17 @@
 #### 2.Logistic regression
 * [Code during course](./2_logistic_regression/logistic_regression.ipynb)
 * [Assignment](./2_logistic_regression/assignment.ipynb)
+
+#### 3.Neural network
+* [Code during course](./3_neural_network/neural_network.ipynb)
+* [Assignment](./3_neural_network/assignment.ipynb)
+
+#### 4.Neural network back propagation
+
+#### 5.Bias vs variance
+
+#### 6.SVM
+
+#### 7.K-means and PCA
+
+#### 8.Anomaly detection
