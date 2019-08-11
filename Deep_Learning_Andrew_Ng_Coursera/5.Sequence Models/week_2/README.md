@@ -1,9 +1,7 @@
----
 
----
+# Natural Language Processing & Word Embeddings
 
-<h1 align="center">自然语言处理与词嵌入</h1>
-## 词嵌入
+## 1.词嵌入
 
 one-hot 向量将每个单词表示为完全独立的个体，不同词向量都是正交的，因此单词间的相似度无法体现。
 
@@ -11,9 +9,9 @@ one-hot 向量将每个单词表示为完全独立的个体，不同词向量都
 
 将高维的词嵌入“嵌入”到一个二维空间里，就可以进行可视化。常用的一种可视化算法是 t-SNE 算法。在通过复杂而非线性的方法映射到二维空间后，每个词会根据语义和相关程度聚在一起。相关论文：[van der Maaten and Hinton., 2008. Visualizing Data using t-SNE](https://www.seas.harvard.edu/courses/cs281/papers/tsne.pdf)
 
-**词嵌入（Word Embedding）**是 NLP 中语言模型与表征学习技术的统称，概念上而言，它是指把一个维数为所有词的数量的高维空间（one-hot 形式表示的词）“嵌入”到一个维数低得多的连续向量空间中，每个单词或词组被映射为实数域上的向量。对大量词汇进行词嵌入后获得的词向量，可用于完成**命名实体识别（Named Entity Recognition）**等任务。
+**词嵌入(Word Embedding)** 是 NLP 中语言模型与表征学习技术的统称，概念上而言，它是指把一个维数为所有词的数量的高维空间（one-hot 形式表示的词）“嵌入”到一个维数低得多的连续向量空间中，每个单词或词组被映射为实数域上的向量。对大量词汇进行词嵌入后获得的词向量，可用于完成**命名实体识别(Named Entity Recognition)**等任务。
 
-### 词嵌入与迁移学习
+### 1.1.词嵌入与迁移学习
 
 用词嵌入做迁移学习可以降低学习成本，提高效率。其步骤如下：
 
@@ -21,7 +19,7 @@ one-hot 向量将每个单词表示为完全独立的个体，不同词向量都
 2. 将这些词嵌入模型迁移到新的、只有少量标注训练集的任务中；
 3. 可以选择是否微调词嵌入。当标记数据集不是很大时可以省下这一步。
 
-### 词嵌入与类比推理
+### 1.2.词嵌入与类比推理
 
 词嵌入可用于类比推理。例如，给定对应关系“男性（Man）”对“女性（Woman）”，想要类比出“国王（King）”对应的词汇。则可以有 $e\_{man} - e\_{woman} \approx e\_{king} - e\_? $ ，之后的目标就是找到词向量 $w$，来找到使相似度 $sim(e\_w, e\_{king} - e\_{man} + e\_{woman})$ 最大。
 
@@ -31,7 +29,7 @@ $$sim(u, v) = \frac{u^T v}{|| u ||\_2 || v ||\_2}$$
 
 相关论文：[Mikolov et. al., 2013, Linguistic regularities in continuous space word representations](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/rvecs.pdf)
 
-## 嵌入矩阵
+## 2.嵌入矩阵
 
 ![Embedding-matrix](./imgs_readme/Embedding-matrix.png)
 
@@ -41,9 +39,9 @@ $$E \cdot o\_i = e\_i$$
 
 但在实际情况下一般不这么做。因为 one-hot 向量维度很高，且几乎所有元素都是 0，这样做的效率太低。因此，实践中直接用专门的函数查找矩阵 $E$ 的特定列。
 
-## 学习词嵌入
+## 3.学习词嵌入
 
-### 神经概率语言模型
+### 3.1.神经概率语言模型
 
 **神经概率语言模型（Neural Probabilistic Language Model）**构建了一个能够通过上下文来预测未知词的神经网络，在训练这个语言模型的同时学习词嵌入。
 
@@ -53,7 +51,7 @@ $$E \cdot o\_i = e\_i$$
 
 相关论文：[Bengio et. al., 2003, A neural probabilistic language model](http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)
 
-### Word2Vec
+### 3.2.Word2Vec
 
 **Word2Vec** 是一种简单高效的词嵌入学习算法，包括 2 种模型：
 
@@ -66,7 +64,7 @@ $$E \cdot o\_i = e\_i$$
 
 相关论文：[Mikolov et. al., 2013. Efficient estimation of word representations in vector space.](https://arxiv.org/pdf/1301.3781.pdf)
 
-#### Skip-gram
+#### 3.2.1.Skip-gram
 
 ![new-Skip-Gram](./imgs_readme/new-Skip-Gram.png)
 
@@ -84,7 +82,7 @@ $$L(\hat y, y) = -\sum^m\_{i=1}y\_ilog\hat y\_i$$
 
 如果在语料库中随机均匀采样得到选定的词 $c$，则 'the', 'of', 'a', 'and' 等出现频繁的词将影响到训练结果。因此，采用了一些策略来平衡选择。
 
-#### CBOW
+#### 3.2.2.CBOW
 
 ![CBOW](./imgs_readme/CBOW.png)
 
@@ -96,7 +94,7 @@ CBOW 模型的工作方式与 Skip-gram 相反，通过采样上下文中的词�
 * [word2vec原理推导与代码分析-码农场](http://www.hankcs.com/nlp/word2vec.html)（中文，深入推导）
 * [课程 cs224n 的 notes1](https://github.com/stanfordnlp/cs224n-winter17-notes/blob/master/notes1.pdf)（英文）
 
-#### 负采样
+#### 3.2.3.负采样
 
 为了解决 Softmax 计算较慢的问题，Word2Vec 的作者后续提出了**负采样（Negative Sampling）**模型。对于监督学习问题中的分类任务，在训练时同时需要正例和负例。在分级的 Softmax 中，负例放在二叉树的根节点上；而对于负采样，负例是随机采样得到的。
 
@@ -120,7 +118,7 @@ $$p(w\_i) = \frac{f(w\_i)^{\frac{3}{4}}}{\sum^m\_{j=0}f(w\_j)^{\frac{3}{4}}}$$
 
 相关论文：[Mikolov et. al., 2013. Distributed representation of words and phrases and their compositionality](https://arxiv.org/pdf/1310.4546.pdf)
 
-### Glove
+### 3.3.Glove
 
 **GloVe（Global Vectors）**是另一种流行的词嵌入算法。Glove 模型基于语料库统计了词的**共现矩阵**$X$，$X$中的元素 $X\_{ij}$ 表示单词 $i$ 和单词 $j$ “为上下文-目标词”的次数。之后，用梯度下降法最小化以下损失函数：
 
@@ -134,7 +132,7 @@ $$J = \sum^N\_{i=1}\sum^N\_{j=1}f(X\_{ij})(\theta^t\_ie\_j + b\_i + b\_j - log(X
 
 最后，使用各种词嵌入算法学到的词向量实际上大多都超出了人类的理解范围，难以从某个值中看出与语义的相关程度。
 
-## 情感分类
+## 4.情感分类
 
 情感分类是指分析一段文本对某个对象的情感是正面的还是负面的，实际应用包括舆情分析、民意调查、产品意见调查等等。情感分类的问题之一是标记好的训练数据不足。但是有了词嵌入得到的词向量，中等规模的标记训练数据也能构建出一个效果不错的情感分类器。
 
@@ -146,11 +144,11 @@ $$J = \sum^N\_{i=1}\sum^N\_{j=1}f(X\_{ij})(\theta^t\_ie\_j + b\_i + b\_j - log(X
 
 ![RNN-sentiment-classification](./imgs_readme/RNN-sentiment-classification.png)
 
-## 词嵌入除偏
+## 5.词嵌入除偏
 
 语料库中可能存在性别歧视、种族歧视、性取向歧视等非预期形式偏见（Bias），这种偏见会直接反映到通过词嵌入获得的词向量。例如，使用未除偏的词嵌入结果进行类比推理时，"Man" 对 "Computer Programmer" 可能得到 "Woman" 对 "Housemaker" 等带有性别偏见的结果。词嵌入除偏的方法有以下几种：
 
-**1. 中和本身与性别无关词汇**
+### 5.1.中和本身与性别无关词汇
 
 对于“医生（doctor）”、“老师（teacher）”、“接待员（receptionist）”等本身与性别无关词汇，可以**中和（Neutralize）**其中的偏见。首先用“女性（woman）”的词向量减去“男性（man）”的词向量，得到的向量 $g=e\_{woman}−e\_{man}$ 就代表了“性别（gender）”。假设现有的词向量维数为 50，那么对某个词向量，将 50 维空间分成两个部分：与性别相关的方向 $g$ 和与 $g$ **正交**的其他 49 个维度 $g\_{\perp}$。如下左图：
 
@@ -163,7 +161,7 @@ $$J = \sum^N\_{i=1}\sum^N\_{j=1}f(X\_{ij})(\theta^t\_ie\_j + b\_i + b\_j - log(X
 $$e^{bias\_component} = \frac{e*g}{||g||\_2^2} * g$$
 $$e^{debiased} = e - e^{bias\_component}$$
 
-**2. 均衡本身与性别有关词汇**
+### 5.2.均衡本身与性别有关词汇
 
 对于“男演员（actor）”、“女演员（actress）”、“爷爷（grandfather）”等本身与性别有关词汇，中和“婴儿看护人（babysit）”中存在的性别偏见后，还是无法保证它到“女演员（actress）”与到“男演员（actor）”的距离相等。对这样一对性别有关的词，除偏的过程是**均衡（Equalization）**它们的性别属性。其核心思想是确保一对词（actor 和 actress）到 $g\_{\perp}$ 的距离相等。
 
