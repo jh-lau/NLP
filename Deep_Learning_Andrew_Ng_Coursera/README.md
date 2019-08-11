@@ -24,5 +24,5 @@
 
 ## Course-5.Sequence Models
 ### week-1.Recurrent Neural Networks
-### [week-2.Natural Language Processing & Word Embeddings](./5.Sequence Models/week_2)
+### [week-2.Natural Language Processing & Word Embeddings](5_Sequence Models/week_2)
 ### week-3.Sequence models & Attention mechanism
