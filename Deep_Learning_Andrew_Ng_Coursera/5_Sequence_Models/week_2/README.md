@@ -21,21 +21,21 @@ one-hot 向量将每个单词表示为完全独立的个体，不同词向量都
 
 ### 1.2.词嵌入与类比推理
 
-词嵌入可用于类比推理。例如，给定对应关系“男性（Man）”对“女性（Woman）”，想要类比出“国王（King）”对应的词汇。则可以有 $e\_{man} - e\_{woman} \approx e\_{king} - e\_? $ ，之后的目标就是找到词向量 $w$，来找到使相似度 $sim(e\_w, e\_{king} - e\_{man} + e\_{woman})$ 最大。
+词嵌入可用于类比推理。例如，给定对应关系“男性（Man）”对“女性（Woman）”，想要类比出“国王（King）”对应的词汇。则可以有 $e_{man} - e_{woman} \approx e_{king} - e_? $ ，之后的目标就是找到词向量 $w$，来找到使相似度 $sim(e_w, e_{king} - e_{man} + e_{woman})$ 最大。
 
 一个最常用的相似度计算函数是**余弦相似度（cosine similarity）**。公式为：
 
-$$sim(u, v) = \frac{u^T v}{|| u ||\_2 || v ||\_2}$$
+$$sim(u, v) = \frac{u^T v}{|| u ||_2 || v ||_2}$$
 
 相关论文：[Mikolov et. al., 2013, Linguistic regularities in continuous space word representations](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/rvecs.pdf)
 
 ## 2.嵌入矩阵
 
-![Embedding-matrix](./imgs_readme/Embedding-matrix.png)
+![Embedding-matrix](../imgs_readme/Embedding-matrix.png)
 
-不同的词嵌入方法能够用不同的方式学习到一个**嵌入矩阵（Embedding Matrix）** $E$。将字典中位置为 $i$ 的词的 one-hot 向量表示为 $o\_i$，词嵌入后生成的词向量用 $e\_i$表示，则有：
+不同的词嵌入方法能够用不同的方式学习到一个**嵌入矩阵（Embedding Matrix）** $E$。将字典中位置为 $i$ 的词的 one-hot 向量表示为 $o_i$，词嵌入后生成的词向量用 $e_i$表示，则有：
 
-$$E \cdot o\_i = e\_i$$
+$$E \cdot o_i = e_i$$
 
 但在实际情况下一般不这么做。因为 one-hot 向量维度很高，且几乎所有元素都是 0，这样做的效率太低。因此，实践中直接用专门的函数查找矩阵 $E$ 的特定列。
 
@@ -45,7 +45,7 @@ $$E \cdot o\_i = e\_i$$
 
 **神经概率语言模型（Neural Probabilistic Language Model）**构建了一个能够通过上下文来预测未知词的神经网络，在训练这个语言模型的同时学习词嵌入。
 
-![Neural-language-model](./imgs_readme/Neural-language-model.png)
+![Neural-language-model](../imgs_readme/Neural-language-model.png)
 
 训练过程中，将语料库中的某些词作为目标词，以目标词的部分上下文作为输入，Softmax 输出的预测结果为目标词。嵌入矩阵 $E$ 和 $w$、$b$ 为需要通过训练得到的参数。这样，在得到嵌入矩阵后，就可以得到词嵌入后生成的词向量。
 
@@ -66,17 +66,17 @@ $$E \cdot o\_i = e\_i$$
 
 #### 3.2.1.Skip-gram
 
-![new-Skip-Gram](./imgs_readme/new-Skip-Gram.png)
+![new-Skip-Gram](../imgs_readme/new-Skip-Gram.png)
 
 从上图可以看到，从左到右是 One-hot 向量，乘以 center word 的矩阵 $W$ 于是找到词向量，乘以另一个 context word 的矩阵 $W'$ 得到对每个词语的“相似度”，对相似度取 Softmax 得到概率，与答案对比计算损失。
 
 设某个词为 $c$，该词的一定词距内选取一些配对的目标上下文 $t$，则该网路仅有的一个 Softmax 单元输出条件概率：
 
-$$p(t|c) = \frac{exp(\theta\_t^T e\_c)}{\sum^m\_{j=1}exp(\theta\_j^T e\_c)}$$
+$$p(t|c) = \frac{exp(\theta_t^T e_c)}{\sum^m_{j=1}exp(\theta_j^T e_c)}$$
 
-$\theta\_t$ 是一个与输出 $t$ 有关的参数，其中省略了用以纠正偏差的参数。损失函数仍选用交叉熵：
+$\theta_t$ 是一个与输出 $t$ 有关的参数，其中省略了用以纠正偏差的参数。损失函数仍选用交叉熵：
 
-$$L(\hat y, y) = -\sum^m\_{i=1}y\_ilog\hat y\_i$$
+$$L(\hat y, y) = -\sum^m_{i=1}y_ilog\hat y_i$$
 
 在此 Softmax 分类中，每次计算条件概率时，需要对词典中所有词做求和操作，因此计算量很大。解决方案之一是使用一个**分级的 Softmax 分类器（Hierarchical Softmax Classifier）**，形如二叉树。在实践中，一般采用霍夫曼树（Huffman Tree）而非平衡二叉树，常用词在顶部。
 
@@ -84,7 +84,7 @@ $$L(\hat y, y) = -\sum^m\_{i=1}y\_ilog\hat y\_i$$
 
 #### 3.2.2.CBOW
 
-![CBOW](./imgs_readme/CBOW.png)
+![CBOW](../imgs_readme/CBOW.png)
 
 CBOW 模型的工作方式与 Skip-gram 相反，通过采样上下文中的词来预测中间的词。
 
@@ -98,35 +98,35 @@ CBOW 模型的工作方式与 Skip-gram 相反，通过采样上下文中的词�
 
 为了解决 Softmax 计算较慢的问题，Word2Vec 的作者后续提出了**负采样（Negative Sampling）**模型。对于监督学习问题中的分类任务，在训练时同时需要正例和负例。在分级的 Softmax 中，负例放在二叉树的根节点上；而对于负采样，负例是随机采样得到的。
 
-![Defining-a-learning-problem](./imgs_readme/Defining-a-learning-problem.png)
+![Defining-a-learning-problem](../imgs_readme/Defining-a-learning-problem.png)
 
 如上图所示，当输入的词为一对上下文-目标词时，标签设置为 1（这里的上下文也是一个词）。另外任意取 k 对非上下文-目标词作为负样本，标签设置为 0。对于小数据集，k 取 5~20 较为合适；而当有大量数据时，k 可以取 2~5。
 
 改用多个 Sigmoid 输出上下文-目标词（c, t）为正样本的概率：
 
-$$P(y=1 | c, t) = \sigma(\theta\_t^Te\_c)$$
+$$P(y=1 | c, t) = \sigma(\theta_t^Te_c)$$
 
-其中，$\theta\_t$、$e\_c$ 分别代表目标词和上下文的词向量。
+其中，$\theta_t$、$e_c$ 分别代表目标词和上下文的词向量。
 
 之前训练中每次要更新 n 维的多分类 Softmax 单元（n 为词典中词的数量）。现在每次只需要更新 k+1 维的二分类 Sigmoid 单元，计算量大大降低。
 
 关于计算选择某个词作为负样本的概率，作者推荐采用以下公式（而非经验频率或均匀分布）：
 
-$$p(w\_i) = \frac{f(w\_i)^{\frac{3}{4}}}{\sum^m\_{j=0}f(w\_j)^{\frac{3}{4}}}$$
+$$p(w_i) = \frac{f(w_i)^{\frac{3}{4}}}{\sum^m_{j=0}f(w_j)^{\frac{3}{4}}}$$
 
-其中，$f(w\_i)$ 代表语料库中单词 $w\_i$ 出现的频率。上述公式更加平滑，能够增加低频词的选取可能。
+其中，$f(w_i)$ 代表语料库中单词 $w_i$ 出现的频率。上述公式更加平滑，能够增加低频词的选取可能。
 
 相关论文：[Mikolov et. al., 2013. Distributed representation of words and phrases and their compositionality](https://arxiv.org/pdf/1310.4546.pdf)
 
 ### 3.3.Glove
 
-**GloVe（Global Vectors）**是另一种流行的词嵌入算法。Glove 模型基于语料库统计了词的**共现矩阵**$X$，$X$中的元素 $X\_{ij}$ 表示单词 $i$ 和单词 $j$ “为上下文-目标词”的次数。之后，用梯度下降法最小化以下损失函数：
+**GloVe（Global Vectors）**是另一种流行的词嵌入算法。Glove 模型基于语料库统计了词的**共现矩阵**$X$，$X$中的元素 $X_{ij}$ 表示单词 $i$ 和单词 $j$ “为上下文-目标词”的次数。之后，用梯度下降法最小化以下损失函数：
 
-$$J = \sum^N\_{i=1}\sum^N\_{j=1}f(X\_{ij})(\theta^t\_ie\_j + b\_i + b\_j - log(X\_{ij}))^2$$
+$$J = \sum^N_{i=1}\sum^N_{j=1}f(X_{ij})(\theta^t_ie_j + b_i + b_j - log(X_{ij}))^2$$
 
-其中，$\theta\_i$、$e\_j$是单词 $i$ 和单词 $j$ 的词向量；$b\_i$、$b\_j$；$f()$ 是一个用来避免 $X\_{ij}=0$时$log(X\_{ij})$为负无穷大、并在其他情况下调整权重的函数。$X\_{ij}=0$时，$f(X\_{ij}) = 0$。
+其中，$\theta_i$、$e_j$是单词 $i$ 和单词 $j$ 的词向量；$b_i$、$b_j$；$f()$ 是一个用来避免 $X_{ij}=0$时$log(X_{ij})$为负无穷大、并在其他情况下调整权重的函数。$X_{ij}=0$时，$f(X_{ij}) = 0$。
 
-“为上下文-目标词”可以代表两个词出现在同一个窗口。在这种情况下，$\theta\_i$ 和 $e\_j$ 是完全对称的。因此，在训练时可以一致地初始化二者，使用梯度下降法处理完以后取平均值作为二者共同的值。
+“为上下文-目标词”可以代表两个词出现在同一个窗口。在这种情况下，$\theta_i$ 和 $e_j$ 是完全对称的。因此，在训练时可以一致地初始化二者，使用梯度下降法处理完以后取平均值作为二者共同的值。
 
 相关论文：[Pennington st. al., 2014. Glove: Global Vectors for Word Representation](https://nlp.stanford.edu/pubs/glove.pdf)
 
@@ -136,53 +136,53 @@ $$J = \sum^N\_{i=1}\sum^N\_{j=1}f(X\_{ij})(\theta^t\_ie\_j + b\_i + b\_j - log(X
 
 情感分类是指分析一段文本对某个对象的情感是正面的还是负面的，实际应用包括舆情分析、民意调查、产品意见调查等等。情感分类的问题之一是标记好的训练数据不足。但是有了词嵌入得到的词向量，中等规模的标记训练数据也能构建出一个效果不错的情感分类器。
 
-![Simple-sentiment-classification-model](./imgs_readme/Simple-sentiment-classification-model.png)
+![Simple-sentiment-classification-model](../imgs_readme/Simple-sentiment-classification-model.png)
 
 如上图所示，用词嵌入方法获得嵌入矩阵 $E$ 后，计算出句中每个单词的词向量并取平均值，输入一个 Softmax 单元，输出预测结果。这种方法的优点是适用于任何长度的文本；缺点是没有考虑词的顺序，对于包含了多个正面评价词的负面评价，很容易预测到错误结果。
 
 使用 RNN 能够实现一个效果更好的情感分类器：
 
-![RNN-sentiment-classification](./imgs_readme/RNN-sentiment-classification.png)
+![RNN-sentiment-classification](../imgs_readme/RNN-sentiment-classification.png)
 
 ## 5.词嵌入除偏
 
 语料库中可能存在性别歧视、种族歧视、性取向歧视等非预期形式偏见（Bias），这种偏见会直接反映到通过词嵌入获得的词向量。例如，使用未除偏的词嵌入结果进行类比推理时，"Man" 对 "Computer Programmer" 可能得到 "Woman" 对 "Housemaker" 等带有性别偏见的结果。词嵌入除偏的方法有以下几种：
 
-### 5.1.中和本身与性别无关词汇
+### 5.1.均衡本身与性别无关词汇
 
-对于“医生（doctor）”、“老师（teacher）”、“接待员（receptionist）”等本身与性别无关词汇，可以**中和（Neutralize）**其中的偏见。首先用“女性（woman）”的词向量减去“男性（man）”的词向量，得到的向量 $g=e\_{woman}−e\_{man}$ 就代表了“性别（gender）”。假设现有的词向量维数为 50，那么对某个词向量，将 50 维空间分成两个部分：与性别相关的方向 $g$ 和与 $g$ **正交**的其他 49 个维度 $g\_{\perp}$。如下左图：
+对于“医生（doctor）”、“老师（teacher）”、“接待员（receptionist）”等本身与性别无关词汇，可以**中和（Neutralize）**其中的偏见。首先用“女性（woman）”的词向量减去“男性（man）”的词向量，得到的向量 $g=e_{woman}−e_{man}$ 就代表了“性别（gender）”。假设现有的词向量维数为 50，那么对某个词向量，将 50 维空间分成两个部分：与性别相关的方向 $g$ 和与 $g$ **正交**的其他 49 个维度 $g_{\perp}$。如下左图：
 
-![Neutralize](./imgs_readme/Neutralize.png)
+![Neutralize](../imgs_readme/Neutralize.png)
 
-而除偏的步骤，是将要除偏的词向量（左图中的 $e\_{receptionist}$）在向量 $g$ 方向上的值置为 0，变成右图所示的 $e^{debiased}\_{receptionist}$。
+而除偏的步骤，是将要除偏的词向量（左图中的 $e_{receptionist}$）在向量 $g$ 方向上的值置为 0，变成右图所示的 $e^{debiased}_{receptionist}$。
 
 公式如下：
 
-$$e^{bias\_component} = \frac{e*g}{||g||\_2^2} * g$$
-$$e^{debiased} = e - e^{bias\_component}$$
+$$e^{bias_component} = \frac{e*g}{||g||_2^2} * g$$
+$$e^{debiased} = e - e^{bias_component}$$
 
 ### 5.2.均衡本身与性别有关词汇
 
-对于“男演员（actor）”、“女演员（actress）”、“爷爷（grandfather）”等本身与性别有关词汇，中和“婴儿看护人（babysit）”中存在的性别偏见后，还是无法保证它到“女演员（actress）”与到“男演员（actor）”的距离相等。对这样一对性别有关的词，除偏的过程是**均衡（Equalization）**它们的性别属性。其核心思想是确保一对词（actor 和 actress）到 $g\_{\perp}$ 的距离相等。
+对于“男演员（actor）”、“女演员（actress）”、“爷爷（grandfather）”等本身与性别有关词汇，中和“婴儿看护人（babysit）”中存在的性别偏见后，还是无法保证它到“女演员（actress）”与到“男演员（actor）”的距离相等。对这样一对性别有关的词，除偏的过程是**均衡（Equalization）**它们的性别属性。其核心思想是确保一对词（actor 和 actress）到 $g_{\perp}$ 的距离相等。
 
-![Equalization](./imgs_readme/Equalization.png)
+![Equalization](../imgs_readme/Equalization.png)
 
 公式：
 
-$$ \mu = \frac{e\_{w1} + e\_{w2}}{2}$$ 
+$$ \mu = \frac{e_{w1} + e_{w2}}{2}$$ 
 
 
-$$\mu\_{B} = \frac {\mu * bias\\\_axis}{||bias\\\_axis||\_2} + ||bias\\\_axis||\_2 *bias\\\_axis$$ 
+$$\mu_{B} = \frac {\mu * bias\_axis}{||bias\_axis||_2} + ||bias\_axis||_2 *bias\_axis$$ 
 
-$$\mu\_{\perp} = \mu - \mu\_{B}$$
-
-
-$$e\_{w1B} = \sqrt{ |{1 - ||\mu_{\perp} ||^2\_2} |} * \frac{(e\_{\text{w1}} - \mu\_{\perp}) - \mu\_B} {|(e\_{w1} - \mu\_{\perp}) - \mu\_B)|}$$
+$$\mu_{\perp} = \mu - \mu_{B}$$
 
 
-$$e\_{w2B} = \sqrt{ |{1 - ||\mu\_{\perp} ||^2\_2} |} * \frac{(e\_{\text{w2}} - \mu\_{\perp}) - \mu\_B} {|(e\_{w2} - \mu\_{\perp}) - \mu\_B)|}$$
+$$e_{w1B} = \sqrt{ |{1 - ||\mu_{\perp} ||^2_2} |} * \frac{(e_{\text{w1}} - \mu_{\perp}) - \mu_B} {|(e_{w1} - \mu_{\perp}) - \mu_B)|}$$
 
-$$e\_1 = e\_{w1B} + \mu\_{\perp}$$
-$$e\_2 = e\_{w2B} + \mu\_{\perp}$$
+
+$$e_{w2B} = \sqrt{ |{1 - ||\mu_{\perp} ||^2_2} |} * \frac{(e_{\text{w2}} - \mu_{\perp}) - \mu_B} {|(e_{w2} - \mu_{\perp}) - \mu_B)|}$$
+
+$$e_1 = e_{w1B} + \mu_{\perp}$$
+$$e_2 = e_{w2B} + \mu_{\perp}$$
 
 相关论文：[Bolukbasi et. al., 2016. Man is to computer programmer as woman is to homemaker? Debiasing word embeddings](https://arxiv.org/pdf/1607.06520.pdf)
