@@ -17,4 +17,7 @@
 #### 1.[Recoding](./Week_05_0803_pyltp/recoding.ipynb)
 #### 2.[Practise - pyltp的使用](./Week_05_0803_pyltp/pyltp.ipynb)
 
+### 6.Week6 assignments
+#### 1.[Assignment - Questions](./Week_06_0810_machine_learning/Assignment/assginment.md)
+
 
