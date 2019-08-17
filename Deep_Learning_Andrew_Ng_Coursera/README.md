@@ -1,7 +1,9 @@
 ## Course-1.Neural Networks and Deep Learning
-> Course weekly reardme file recite and refactor from **[bihuang624](https://github.com/bighuang624/Andrew-Ng-Deep-Learning-notes/tree/master/docs)**.
+> Course weekly readme file recite and refactor from **[bihuang624](https://github.com/bighuang624/Andrew-Ng-Deep-Learning-notes/tree/master/docs)**.
 ### week-1.[Introduction to deep learning](./1_Neural_Networks_and_Deep_Learning/week_1)
 ### week-2.[Neural Networks Basics](./1_Neural_Networks_and_Deep_Learning/week_2)
+#### [Lectures](./1_Neural_Networks_and_Deep_Learning/week_2/lectures)
+#### Assignment -- [Logistic Regression with a Neural Network mindset](./1_Neural_Networks_and_Deep_Learning/week_2/1_assignment.ipynb)
 ### week-3.[Shallow neural networks](./1_Neural_Networks_and_Deep_Learning/week_3)
 ### week-4.[Deep Neural Networks](./1_Neural_Networks_and_Deep_Learning/week_4)
 
