@@ -20,4 +20,6 @@
 ### 6.Week6 assignments
 #### 1.[Assignment - Questions](./Week_06_0810_machine_learning/Assignment/assginment.md)
 
-
+### 7.Week7 assignment
+#### 1.[Recoding](./Week_07_0817_machine_learning_2/recoding.ipynb)
+#### 2.[Assignment -- First step of using machine learning](./Week_07_0817_machine_learning_2/Assignment/1_assignment.ipynb)
