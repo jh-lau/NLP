@@ -19,6 +19,8 @@
 * [Assignment](./3_neural_network/assignment.ipynb)
 
 #### 4.Neural network back propagation
+* [Recoding](./4_back_propagation/nn_bp.ipynb)
+* [Assignment](./4_back_propagation/assignment.ipynb)
 
 #### 5.Bias vs variance
 
