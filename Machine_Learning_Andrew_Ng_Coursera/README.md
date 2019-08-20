@@ -23,6 +23,7 @@
 * [Assignment](./4_back_propagation/assignment.ipynb)
 
 #### 5.Bias vs variance
+* [Assignment](./5_bias_vs_variance/assignment.ipynb)
 
 #### 6.SVM
 
