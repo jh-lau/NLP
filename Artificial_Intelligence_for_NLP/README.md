@@ -11,7 +11,7 @@
 ##### 1.1 [动态规划表的几种应用](./Week_03_0713_dynamic_programming/Assignment/dynamic_programming.ipynb)
 
 ### 4.Week4 assignments
-#### 1.[Assignment1 - 词向量过程](./Week_04_0727_word2vec/Assignment/word2vec-Beginning.ipynb)
+#### 1.[Assignment1 - 词向量过程](./Week_04_0727_word2vec/Assignment/word2vec.ipynb)
 
 ### 5.Week5 practise
 #### 1.[Recoding](./Week_05_0803_pyltp/recoding.ipynb)
