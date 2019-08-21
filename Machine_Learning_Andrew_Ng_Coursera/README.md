@@ -26,6 +26,8 @@
 * [Assignment](./5_bias_vs_variance/assignment.ipynb)
 
 #### 6.SVM
+* [Assignment](./6_SVM/assignment.ipynb)
+* [more about SVM](./6_SVM/SVM_practise.ipynb)
 
 #### 7.K-means and PCA
 
