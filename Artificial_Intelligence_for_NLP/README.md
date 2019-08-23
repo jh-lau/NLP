@@ -22,4 +22,5 @@
 
 ### 7.Week7 assignment
 #### 1.[Recoding](./Week_07_0817_machine_learning_2/recoding.ipynb)
-#### 2.[Assignment -- First step of using machine learning](./Week_07_0817_machine_learning_2/Assignment/1_assignment.ipynb)
+#### 2.[Doc2vec](./Week_07_0817_machine_learning_2/doc2vec.ipynb)
+#### 3.[Assignment -- First step of using machine learning](./Week_07_0817_machine_learning_2/Assignment/1_assignment.ipynb)
