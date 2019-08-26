@@ -30,5 +30,7 @@
 * [more about SVM](./6_SVM/SVM_practise.ipynb)
 
 #### 7.K-means and PCA
+* [Assignment](./7_kmeans_and_PCA/assignment.ipynb)
+* [more about PCA](./7_kmeans_and_PCA/practise.ipynb)
 
 #### 8.Anomaly detection
