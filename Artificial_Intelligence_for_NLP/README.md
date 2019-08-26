@@ -29,8 +29,8 @@
 #### 1.[Recode](./Week_07_0817_machine_learning_2/recoding.ipynb)
 - [Doc2vec](./Week_07_0817_machine_learning_2/doc2vec.ipynb)
 
-#### 2.[Assignment -- First step of using machine learning](./Week_07_0817_machine_learning_2/Assignment/1_assignment.ipynb)
+#### 2.[Assignment -- KNN and LogisticsRegression](./Week_07_0817_machine_learning_2/Assignment/1_assignment.ipynb)
 
 ### Week8 assignment
 #### 1.[Recode](./Week_08_0824_svm_naive_bayes_decision_tree/recoding.ipynb)
-#### 2.[Assignment](./Week_08_0824_svm_naive_bayes_decision_tree/Assignment/assignment.ipynb)
+#### 2.[Assignment -- SVM, decision tree and random forest](./Week_08_0824_svm_naive_bayes_decision_tree/Assignment/assignment.ipynb)
