@@ -4,7 +4,7 @@
 #### 3.[Assignment2 - 基于模板的对话生成](./Week_01_0630_possibility_model/assignments/assignment_02/assignment-01-optional-pattern-match.ipynb)
 
 ### Week2 assignments
-#### 1.[Recode](./Week_02_0706_metro_search/Refactoring_lesson-02.ipynb)
+#### 1.[Recode](./Week_02_0706_metro_search/recode.ipynb)
 #### 2.[Assignment1 - 比较不同代价函数的表现](./Week_02_0706_metro_search/Assignment/Assignment-02.ipynb)
 #### 3.[Assignment2 - 北京地铁智能搜索实现](./Week_02_0706_metro_search/Assignment/metro_path_assignment.ipynb)
 
