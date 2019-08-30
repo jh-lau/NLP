@@ -1,0 +1,57 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}News Extractor{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+             data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Powered by Flasky</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+        <div class="page-header">
+        <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+        {{ wtf.quick_form(form) }}
+        </div>
+        </div>
+    {% if data %}
+        <div class="container">
+        <div class="page-header">
+        <table class="table">
+          <caption>Extractor Result</caption>
+              {% if data.subject %}
+           <thead>
+            <tr>
+              <th>Speaker</th>
+              <th>Verb</th>
+              <th>Content</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ data.subject }}</td>
+              <td>{{ data.speak_word }}</td>
+              <td>{{ data.content }}</td>
+            </tr>
+                {% else %}
+                <td>{{ data }}</td>
+          </tbody>
+                {% endif %}
+         </div>
+        </div>
+        </table>
+    {% endif %}
+{% endblock %}
