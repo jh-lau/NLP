@@ -26,7 +26,10 @@ class Extractor:
         tags = list(zip(words, postags))
         subject_index = [(arg.range.start, arg.range.end) for role in roles
                          for arg in role.arguments if arg.name == 'A0']
-        subject = [words[index[0]:index[1] + 1] for index in subject_index][0][0]
+        if subject_index:
+            subject = [words[index[0]:index[1] + 1] for index in subject_index][0][0]
+        else:
+            return "No subject is found in sentence."
 
         verbs = [x[0] for x in tags if x[1] == 'v']
         try:
