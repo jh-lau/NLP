@@ -34,3 +34,5 @@
 ### Week8 assignment
 #### 1.[Recode](./Week_08_0824_svm_naive_bayes_decision_tree/recoding.ipynb)
 #### 2.[Assignment -- SVM, decision tree and random forest](./Week_08_0824_svm_naive_bayes_decision_tree/Assignment/assignment.ipynb)
+
+### [Project1 - NewsExtractor](http://39.100.3.165:5676/)
