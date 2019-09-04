@@ -8,3 +8,5 @@ api.py
 20newsbydate/
 *.model
 data/
+notMNIST_large/
+notMNIST_small/
