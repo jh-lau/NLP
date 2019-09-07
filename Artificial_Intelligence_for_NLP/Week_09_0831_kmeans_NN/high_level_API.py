@@ -103,6 +103,7 @@ def train():
 
     print("Model's performance on test dataset:")
     print(f"Test accuracy: {model.evaluate(test_flatten, test_labels_1hot)[1] * 100:.3f}%")
+    model.save('model.h5')
 
 
 if __name__ == '__main__':
