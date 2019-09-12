@@ -44,3 +44,7 @@
 - [fullyconnected](./Week_09_0831_kmeans_NN/assignments/2_fullyconnected.ipynb)
 - [regularization](./Week_09_0831_kmeans_NN/assignments/3_regularization.ipynb)
 #### 3.[kmeans新闻聚类](./Week_09_0831_kmeans_NN/assignments/kmeans_cluster.ipynb)
+
+### Week10-TensorFlow
+#### 1.[Recode](./Week_10_0908_tensorflow_pytorch/recode.ipynb)
+#### 2.[Assignment - 豆瓣评论分类](./Week_10_0908_tensorflow_pytorch/assignment/douban_classification.ipynb)

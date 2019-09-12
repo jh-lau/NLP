@@ -10,3 +10,5 @@ api.py
 data/
 notMNIST_large/
 notMNIST_small/
+tf_logs/
+tmp/
