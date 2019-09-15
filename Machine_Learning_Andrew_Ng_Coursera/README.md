@@ -31,6 +31,7 @@
 
 #### 7.K-means and PCA
 * [Assignment](./7_kmeans_and_PCA/assignment.ipynb)
-* [more about PCA](./7_kmeans_and_PCA/practise.ipynb)
+* [More about PCA](./7_kmeans_and_PCA/practise.ipynb)
 
 #### 8.Anomaly detection
+* [Assignment](./8_anomaly_detection_and_recommendation/assignment.ipynb)
