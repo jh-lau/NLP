@@ -11,3 +11,5 @@
 - [Solution](./Film_Recommendation_Engine/recommendation_engine.ipynb)
 - [Credit](https://www.kaggle.com/fabiendaniel/film-recommendation-engine/data)
 
+## 4.[o2o优惠券使用预测](https://tianchi.aliyun.com/competition/entrance/231593/introduction)
+- [Example - submission AUC score: 0.56](./o2o优惠券使用预测_天池/o2o.ipynb)
