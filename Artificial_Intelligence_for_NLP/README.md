@@ -48,3 +48,7 @@
 ### Week10-TensorFlow
 #### 1.[Recode](./Week_10_0908_tensorflow_pytorch/recode.ipynb)
 #### 2.[Assignment - 豆瓣评论分类](./Week_10_0908_tensorflow_pytorch/assignment/douban_classification.ipynb)
+
+### Week11-word2vec_detail and project2
+#### 1.[Project2 Tutorial](./Week_11_0914_word2vec_and_project2/autoSummarization)
+#### 2.[Reading Assignments](./Week_11_0914_word2vec_and_project2/pdf)
