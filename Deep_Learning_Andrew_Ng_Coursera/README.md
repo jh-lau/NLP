@@ -32,7 +32,7 @@
 ## Course-3.Structuring Machine Learning Projects
 ### week-1.[ML Strategy (1)](./3_Structuring_Machine_Learning_Projects/week_1)
 - [Lectures](./3_Structuring_Machine_Learning_Projects/week_1/lectures)
-- Quiz -- [Bird recognition in the city](./3_Structuring_Machine_Learning_Projects/week_1/week1-Bird recognition in the city.png)
+- Quiz -- [Bird recognition in the city](./3_Structuring_Machine_Learning_Projects/week_1/week1-Bird_recognition_in_the_city.png)
 ### week-2.[ML Strategy (2)](./3_Structuring_Machine_Learning_Projects/week_2)
 - [Lectures](./3_Structuring_Machine_Learning_Projects/week_2/lectures)
 - Quiz -- [AutoDrive](./3_Structuring_Machine_Learning_Projects/week_2/week2-Autodrive.png)
