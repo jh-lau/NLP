@@ -25,14 +25,17 @@
 - [Lectures](./2_Improving_Deep_Neural_Networks/week_2/lectures)
 - Assignment -- [Optimization methods](./2_Improving_Deep_Neural_Networks/week_2/Optimization+methods.ipynb)
 ### week-3.[Hyperparameter tuning, Batch Normalization and Programming Frameworks](./2_Improving_Deep_Neural_Networks/week_3)
-
-
+- [Lectures](./2_Improving_Deep_Neural_Networks/week_3/lectures)
+- Assignment -- [Tensorflow tutorial](./2_Improving_Deep_Neural_Networks/week_3/Tensorflow+Tutorial.ipynb)
 ---
 
 ## Course-3.Structuring Machine Learning Projects
 ### week-1.[ML Strategy (1)](./3_Structuring_Machine_Learning_Projects/week_1)
+- [Lectures](./3_Structuring_Machine_Learning_Projects/week_1/lectures)
+- Quiz -- [Bird recognition in the city](./3_Structuring_Machine_Learning_Projects/week_1/week1-Bird recognition in the city.png)
 ### week-2.[ML Strategy (2)](./3_Structuring_Machine_Learning_Projects/week_2)
-
+- [Lectures](./3_Structuring_Machine_Learning_Projects/week_2/lectures)
+- Quiz -- [AutoDrive](./3_Structuring_Machine_Learning_Projects/week_2/week2-Autodrive.png)
 ---
 
 
