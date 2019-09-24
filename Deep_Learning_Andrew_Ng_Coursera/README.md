@@ -41,14 +41,24 @@
 
 ## Course-4.Convolutional Neural Networks
 ### week-1.[Foundations of Convolutional Neural Networks](./4_Convolutional_Neural_Networks/week_1)
+- [Lectures](./4_Convolutional_Neural_Networks/week_1/lectures)
+- Assignments
+    - [Convolution model step by step](./4_Convolutional_Neural_Networks/week_1/1_Convolution_model_Step_by_Step_v2.ipynb)
+    - [Convolution model application](./4_Convolutional_Neural_Networks/week_1/2_Convolution_model_Application_v1.ipynb)
 ### week-2.[Deep convolutional models: case studies](./4_Convolutional_Neural_Networks/week_2)
+- [Lectures](./)
 ### week-3.[Object detection](./4_Convolutional_Neural_Networks/week_3)
+- [Lectures](./)
 ### week-4.[Special applications: Face recognition & Neural style transfer](./4_Convolutional_Neural_Networks/week_4)
+- [Lectures](./)
 
 ---
 
 
 ## Course-5.Sequence Models
 ### week-1.[Recurrent Neural Networks](./5_Sequence_Models/week_1)
+- [Lectures](./)
 ### week-2.[Natural Language Processing & Word Embeddings](./5_Sequence_Models/week_2)
+- [Lectures](./)
 ### week-3.[Sequence models & Attention mechanism](./5_Sequence_Models/week_3)
+- [Lectures](./)
