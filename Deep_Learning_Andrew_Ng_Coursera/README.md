@@ -46,7 +46,10 @@
     - [Convolution model step by step](./4_Convolutional_Neural_Networks/week_1/1_Convolution_model_Step_by_Step_v2.ipynb)
     - [Convolution model application](./4_Convolutional_Neural_Networks/week_1/2_Convolution_model_Application_v1.ipynb)
 ### week-2.[Deep convolutional models: case studies](./4_Convolutional_Neural_Networks/week_2)
-- [Lectures](./)
+- [Lectures](./4_Convolutional_Neural_Networks/week_2/lectures)
+- Assignments 
+    - [Keras tutorial](./4_Convolutional_Neural_Networks/week_2/KerasTutorial/Keras_Tutorial_Happy_House_v2.ipynb)
+    - [Residual Network](./4_Convolutional_Neural_Networks/week_2/ResNets/Residual_Networks_v2.ipynb)
 ### week-3.[Object detection](./4_Convolutional_Neural_Networks/week_3)
 - [Lectures](./)
 ### week-4.[Special applications: Face recognition & Neural style transfer](./4_Convolutional_Neural_Networks/week_4)
