@@ -3,10 +3,12 @@
 ### week-1.[Introduction to deep learning](./1_Neural_Networks_and_Deep_Learning/week_1)
 ### week-2.[Neural Networks Basics](./1_Neural_Networks_and_Deep_Learning/week_2)
 - [Lectures](./1_Neural_Networks_and_Deep_Learning/week_2/lectures)
-- Assignment -- [Logistic Regression with a Neural Network mindset](./1_Neural_Networks_and_Deep_Learning/week_2/1_assignment.ipynb)
+- Assignment
+    - [Logistic Regression with a Neural Network mindset](./1_Neural_Networks_and_Deep_Learning/week_2/1_assignment.ipynb)
 ### week-3.[Shallow neural networks](./1_Neural_Networks_and_Deep_Learning/week_3)
 - [Lectures](./1_Neural_Networks_and_Deep_Learning/week_3/lectures)
-- Assignment -- [Planar data classification with one hidden layer](./1_Neural_Networks_and_Deep_Learning/week_3/assignment.ipynb)
+- Assignment
+    - [Planar data classification with one hidden layer](./1_Neural_Networks_and_Deep_Learning/week_3/assignment.ipynb)
 ### week-4.[Deep Neural Networks](./1_Neural_Networks_and_Deep_Learning/week_4)
 - [Lectures](./1_Neural_Networks_and_Deep_Learning/week_4/lectures)
 - Assignments 
@@ -23,10 +25,12 @@
     - [Gradient checking](./2_Improving_Deep_Neural_Networks/week_1/3.Gradient+Checking.ipynb)
 ### week-2.[Optimization algorithms](./2_Improving_Deep_Neural_Networks/week_2)
 - [Lectures](./2_Improving_Deep_Neural_Networks/week_2/lectures)
-- Assignment -- [Optimization methods](./2_Improving_Deep_Neural_Networks/week_2/Optimization+methods.ipynb)
+- Assignment
+    - [Optimization methods](./2_Improving_Deep_Neural_Networks/week_2/Optimization+methods.ipynb)
 ### week-3.[Hyperparameter tuning, Batch Normalization and Programming Frameworks](./2_Improving_Deep_Neural_Networks/week_3)
 - [Lectures](./2_Improving_Deep_Neural_Networks/week_3/lectures)
-- Assignment -- [Tensorflow tutorial](./2_Improving_Deep_Neural_Networks/week_3/Tensorflow+Tutorial.ipynb)
+- Assignment
+    - [Tensorflow tutorial](./2_Improving_Deep_Neural_Networks/week_3/Tensorflow+Tutorial.ipynb)
 ---
 
 ## Course-3.Structuring Machine Learning Projects
@@ -49,11 +53,16 @@
 - [Lectures](./4_Convolutional_Neural_Networks/week_2/lectures)
 - Assignments 
     - [Keras tutorial](./4_Convolutional_Neural_Networks/week_2/KerasTutorial/Keras_Tutorial_Happy_House_v2.ipynb)
-    - [Residual Network](./4_Convolutional_Neural_Networks/week_2/ResNets/Residual_Networks_v2.ipynb)
+    - [Residual network](./4_Convolutional_Neural_Networks/week_2/ResNets/Residual_Networks_v2.ipynb)
 ### week-3.[Object detection](./4_Convolutional_Neural_Networks/week_3)
-- [Lectures](./)
+- [Lectures](./4_Convolutional_Neural_Networks/week_3/lectures)
+- Assignment
+    - [Autonomous driving application - Car detection](./4_Convolutional_Neural_Networks/week_3/Autonomous_driving_application_Car_detection_v1.ipynb)
 ### week-4.[Special applications: Face recognition & Neural style transfer](./4_Convolutional_Neural_Networks/week_4)
-- [Lectures](./)
+- [Lectures](./4_Convolutional_Neural_Networks/week_4/lectures)
+- Assignments
+    - [Face recognition](./4_Convolutional_Neural_Networks/week_4/FaceRecognition/Face_Recognition_for_the_Happy_House-v3.ipynb)
+    - [Neural style transfer](./4_Convolutional_Neural_Networks/week_4/NeuralStyleTransfer/Art_Generation_with_Neural_Style_Transfer_v2.ipynb)
 
 ---
 
