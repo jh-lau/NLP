@@ -63,14 +63,21 @@
 - Assignments
     - [Face recognition](./4_Convolutional_Neural_Networks/week_4/FaceRecognition/Face_Recognition_for_the_Happy_House-v3.ipynb)
     - [Neural style transfer](./4_Convolutional_Neural_Networks/week_4/NeuralStyleTransfer/Art_Generation_with_Neural_Style_Transfer_v2.ipynb)
-
 ---
-
 
 ## Course-5.Sequence Models
 ### week-1.[Recurrent Neural Networks](./5_Sequence_Models/week_1)
 - [Lectures](./)
+- Assignments
+    - [Building a recurrent neural network step by step](./5_Sequence_Models/week_1/1_building-rnn-step-by-step/Building_a_Recurrent_Neural_Network_Step_by_Step.ipynb)
+    - [Dinosaurus island character level language model ](./5_Sequence_Models/week_1/2_dinosaur-island-character-level-language-model/Dinosaurus_Island_Character_level_language_model.ipynb)
+    - [Improvise a jazz solo with an LSTM network](./5_Sequence_Models/week_1/3_jazz-improvisation-with-lstm/Improvise_a_Jazz_Solo_with_an_LSTM_Network.ipynb)
 ### week-2.[Natural Language Processing & Word Embeddings](./5_Sequence_Models/week_2)
-- [Lectures](./)
+- [Lectures](./5_Sequence_Models/week_2/lectures)
+- Assignment
+    - [Operations on word vectors](./5_Sequence_Models/week_2/word-vector-representation/Operations_on_word_vectors.ipynb)
 ### week-3.[Sequence models & Attention mechanism](./5_Sequence_Models/week_3)
-- [Lectures](./)
+- [Lectures](./5_Sequence_Models/week_3/lectures)
+- Assignments
+    - [Neural machine learning translation with attention](./5_Sequence_Models/week_3/1_machine-translation/Neural_machine_translation_with_attention.ipynb)
+    - [Trigger word detection](./5_Sequence_Models/week_3/2_trigger-word-detection/Trigger_word_detection.ipynb)
