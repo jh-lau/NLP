@@ -75,7 +75,8 @@
 ### week-2.[Natural Language Processing & Word Embeddings](./5_Sequence_Models/week_2)
 - [Lectures](./5_Sequence_Models/week_2/lectures)
 - Assignment
-    - [Operations on word vectors](./5_Sequence_Models/week_2/word-vector-representation/Operations_on_word_vectors.ipynb)
+    - [Operations on word vectors](./5_Sequence_Models/week_2/1_word-vector-representation/Operations_on_word_vectors.ipynb)
+    - [Emojify](./5_Sequence_Models/week_2/2_emojify/Emojify.ipynb)
 ### week-3.[Sequence models & Attention mechanism](./5_Sequence_Models/week_3)
 - [Lectures](./5_Sequence_Models/week_3/lectures)
 - Assignments
