@@ -62,7 +62,7 @@
     - CNN for sentence classification
 
 ### Week13 - RNN
-1. [Assignment - Kaggle/Detect toxicity across a diverse range of conversation](./Week_13_0928_RNN/assignments/2_Detect toxicity across a diverse range of conversations.ipynb)
+1. [Assignment - Kaggle/Detect toxicity across a diverse range of conversation](./Week_13_0928_RNN/assignments/2_Detect_toxicity_across_a_diverse_range_of_conversations.ipynb)
 2. [Assignment - Kaggle/Transfer Learning Tutorial](./Week_13_0928_RNN/assignments/1_transfer_learning.ipynb)
 3. [References](./Week_12_0921_CNN/references)
     - A critical review of RNN for sequence learning
