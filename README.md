@@ -18,9 +18,13 @@
 
 ## 3.Deep Learning
 
-### 1.[Deep Learning - Andrew Ng - Coursera](./Deep_Learning_Andrew_Ng_Coursera)
+### 1.[Deep Learning Specialization- Andrew Ng - Coursera](./Deep_Learning_Andrew_Ng_Coursera)
+
+[Course Link](https://www.coursera.org/specializations/deep-learning)
 
 ### 2.[Deep Learning - LiMu](./Deep_Leaning_LiMu_MxNet)
+
+[Course Link](https://space.bilibili.com/209599371/channel/detail?cid=23541)
 
 ### 3.Tools
 
@@ -88,6 +92,4 @@
 ### 3.Projects
 
 - [News Content Extractor](./Projects/newsExtractor)
-
-## 
 

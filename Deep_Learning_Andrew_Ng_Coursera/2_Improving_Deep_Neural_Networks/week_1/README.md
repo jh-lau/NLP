@@ -93,10 +93,10 @@
 
 对于 Logistic 回归，加入 L2 正则化（也称“L2 范数”）的成本函数：
 
-$$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||w||}^2\_2$$
+$$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||w||}^2_2$$
 
-* L2 正则化：$$\frac{\lambda}{2m}{||w||}^2\_2 = \frac{\lambda}{2m}\sum_{j=1}^{n\_x}w^2\_j = \frac{\lambda}{2m}w^Tw$$
-* L1 正则化：$$\frac{\lambda}{2m}{||w||}\_1 = \frac{\lambda}{2m}\sum_{j=1}^{n\_x}{|w\_j|}$$
+* L2 正则化：$$\frac{\lambda}{2m}{||w||}^2_2 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}w^2_j = \frac{\lambda}{2m}w^Tw$$
+* L1 正则化：$$\frac{\lambda}{2m}{||w||}_1 = \frac{\lambda}{2m}\sum_{j=1}^{n_x}{|w_j|}$$
 
 其中，λ 为**正则化因子**，是**超参数**。
 
@@ -108,11 +108,11 @@ $$J(w,b) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}{||
 
 对于神经网络，加入正则化的成本函数：
 
-$$J(w^{[1]}, b^{[1]}, ..., w^{[L]}, b^{[L]}) = \frac{1}{m}\sum\_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}\sum\_{l=1}^L{{||w^{[l]}||}}^2\_F$$
+$$J(w^{[1]}, b^{[1]}, ..., w^{[L]}, b^{[L]}) = \frac{1}{m}\sum_{i=1}^mL(\hat{y}^{(i)},y^{(i)})+\frac{\lambda}{2m}\sum_{l=1}^L{{||w^{[l]}||}}^2_F$$
 
 因为 w 的大小为 ($n^{[l−1]}$, $n^{[l]}$)，因此
 
-$${{||w^{[l]}||}}^2\_F = \sum^{n^{[l-1]}}\_{i=1}\sum^{n^{[l]}}\_{j=1}(w^{[l]}\_{ij})^2$$
+$${{||w^{[l]}||}}^2_F = \sum^{n^{[l-1]}}_{i=1}\sum^{n^{[l]}}_{j=1}(w^{[l]}_{ij})^2$$
 
 该矩阵范数被称为**弗罗贝尼乌斯范数（Frobenius Norm）**，所以神经网络中的正则化项被称为弗罗贝尼乌斯范数矩阵。
 
@@ -200,9 +200,9 @@ $$x = \frac{x - \mu}{\sigma}$$
 
 其中，
 
-$$\mu = \frac{1}{m}\sum^m\_{i=1}x^{(i)}$$
+$$\mu = \frac{1}{m}\sum^m_{i=1}x^{(i)}$$
 
-$$\sigma = \sqrt{\frac{1}{m}\sum^m\_{i=1}x^{{(i)}^2}}$$
+$$\sigma = \sqrt{\frac{1}{m}\sum^m_{i=1}x^{{(i)}^2}}$$
 
 （注意，课程上对应内容中的标准化公式疑似有误，将标准差写成了方差，此处进行修正）
 
@@ -231,14 +231,14 @@ $$\hat{y} = W^{[L]}W^{[L-1]}...W^{[2]}W^{[1]}X$$
 
 根据
 
-$$z={w}_1{x}\_1+{w}\_2{x}\_2 + ... + {w}\_n{x}\_n + b$$
+$$z={w}_1{x}_1+{w}_2{x}_2 + ... + {w}_n{x}_n + b$$
 
 可知，当输入的数量 n 较大时，我们希望每个 wi 的值都小一些，这样它们的和得到的 z 也较小。
 
 为了得到较小的 wi，设置`Var(wi)=1/n`，这里称为 **Xavier initialization**。
 
 ```py
-WL = np.random.randn(WL.shape[0], WL.shape[1]) * np.sqrt(1/n)
+WL = np.random.randn((WL.shape)) * np.sqrt(1/n)
 ```
 
 其中 n 是输入的神经元个数，即`WL.shape[1]`。
@@ -259,7 +259,7 @@ WL = np.random.randn(WL.shape[0], WL.shape[1]) * np.sqrt(1/n)
 
 ![one-sided-difference](../imgs/one-sided-difference.png)
 
-$$f'(\theta) = {\lim\_{\varepsilon\to 0}} = \frac{f(\theta + \varepsilon) - (\theta)}{\varepsilon}$$
+$$f'(\theta) = {\lim_{\varepsilon\to 0}} = \frac{f(\theta + \varepsilon) - (\theta)}{\varepsilon}$$
 
 误差：$O(\varepsilon)$
 
@@ -267,7 +267,7 @@ $$f'(\theta) = {\lim\_{\varepsilon\to 0}} = \frac{f(\theta + \varepsilon) - (\th
 
 ![two-sided-difference](../imgs/two-sided-difference.png)
 
-$$f'(\theta) = {\lim\_{\varepsilon\to 0}} = \frac{f(\theta + \varepsilon) - (\theta - \varepsilon)}{2\varepsilon}$$
+$$f'(\theta) = {\lim_{\varepsilon\to 0}} = \frac{f(\theta + \varepsilon) - (\theta - \varepsilon)}{2\varepsilon}$$
 
 误差：$O(\varepsilon^2)$
 
@@ -291,7 +291,7 @@ $$J(W^{[1]}, b^{[1]}, ..., W^{[L]}，b^{[L]}) = J(\theta)$$
 
 求得一个梯度逼近值
 
-$$d\theta_{approx}[i] ＝ \frac{J(\theta\_1, \theta\_2, ..., \theta\_i+\varepsilon, ...) - J(\theta\_1, \theta\_2, ..., \theta\_i-\varepsilon, ...)}{2\varepsilon}$$
+$$d\theta_{approx}[i] ＝ \frac{J(\theta_1, \theta_2, ..., \theta_i+\varepsilon, ...) - J(\theta_1, \theta_2, ..., \theta_i-\varepsilon, ...)}{2\varepsilon}$$
 
 应该
 
@@ -299,11 +299,11 @@ $$\approx{d\theta[i]} = \frac{\partial J}{\partial \theta_i}$$
 
 因此，我们用梯度检验值
 
-$$\frac{{||d\theta\_{approx} - d\theta||}\_2}{{||d\theta\_{approx}||}\_2+{||d\theta||}\_2}$$
+$$\frac{{||d\theta_{approx} - d\theta||}_2}{{||d\theta_{approx}||}_2+{||d\theta||}_2}$$
 
 检验反向传播的实施是否正确。其中，
 
-$${||x||}\_2 = \sum^N\_{i=1}{|x_i|}^2$$
+$${||x||}_2 = \sum^N_{i=1}{|x_i|}^2$$
 
 表示向量 x 的 2-范数（也称“欧几里德范数”）。
 
