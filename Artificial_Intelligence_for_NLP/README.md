@@ -51,19 +51,19 @@
 
 ### Week11 - word2vec_detail and project2
 1. [Project2 Tutorial](./Week_11_0914_word2vec_and_project2/autoSummarization)
-2. References
-    - [A simple but tough-to-beat baseline for sentence embeddings](./Week_11_0914_word2vec_and_project2/references/A SIMPLE BUT TOUGH-TO-BEAT BASELINE FOR SENTENCE EMBEDDINGS.pdf)
-    - [Distributed representations of words and phrases](./Week_11_0914_word2vec_and_project2/references/Distributed Representations of Words and Phrases.pdf)
-    - [Efficient Estimation of word representations in vector space](./Week_11_0914_word2vec_and_project2/references/Efficient Estimation of Word Representations in Vector Space.pdf)
+2. [References](./Week_11_0914_word2vec_and_project2/references)
+    - A simple but tough-to-beat baseline for sentence embeddings
+    - Distributed representations of words and phrases
+    - Efficient Estimation of word representations in vector space
 
 ### Week12 - CNN
 1. [Assignment - CNN in TensorFlow with notMNIST dataset](./Week_12_0921_CNN/assignment/assignment-12-cnn.ipynb)
-2. References
-    - [CNN for sentence classification](./Week_12_0921_CNN/references/CNN for sentence classification 1408.5882.pdf)
+2. [References](./Week_12_0921_CNN/references)
+    - CNN for sentence classification
 
 ### Week13 - RNN
 1. [Assignment - Kaggle/Detect toxicity across a diverse range of conversation](./Week_13_0928_RNN/assignments/2_Detect toxicity across a diverse range of conversations.ipynb)
 2. [Assignment - Kaggle/Transfer Learning Tutorial](./Week_13_0928_RNN/assignments/1_transfer_learning.ipynb)
-3. References
-    - [A critical review of RNN for sequence learning](./Week_13_0928_RNN/references/A critical review of RNN for sequence learning1506.00019.pdf)
-    - [Seq2Seq with neural network](./Week_13_0928_RNN/references/seq2seq learning with neural network 1409.3215.pdf)
+3. [References](./Week_12_0921_CNN/references)
+    - A critical review of RNN for sequence learning
+    - Seq2Seq with neural network
