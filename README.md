@@ -76,23 +76,13 @@
 
 ### 1.[数学之美](./References/数学之美)
 
-> 提纲挈领，深入浅出。
-
 ### 2.[Hands on TensorFlow](./References/Hands_on_Tensorflow)
-
-> 纸上得来，觉知躬行。
 
 ### 3.[统计学习方法 - 李航](./References/统计学习方法)
 
-> 积基树本，千里之行。
-
 ### 4.[Fluent Python](./References/Fluent_Python)
 
-> 磨刀不误，砍柴之功。
-
 ### 5.[机器学习 - 周志华](./References/机器学习-周志华)
-
-> 往复循环，温故知新。
 
 ---
 
