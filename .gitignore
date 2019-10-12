@@ -7,6 +7,8 @@ References/*/*.pdf
 api.py
 20newsbydate/
 *.model
+*.weights
+*.gensim
 data/
 notMNIST_large/
 notMNIST_small/
