@@ -6,18 +6,25 @@ __author__ = 'liujianhan'
 
 from .verb import TARGET_VERBS
 from pyltp import Segmentor, Postagger, Parser, SementicRoleLabeller
+import platform
+from .config import MODEL_PATH_LINUX, MODEL_PATH_WINDOWS
 
 segmentor = Segmentor()
-segmentor.load(r"D:\\Github\\NLP\\Projects\\data\\ltp_data_v3.4.0\\cws.model")
-
 postagger = Postagger()
-postagger.load(r"D:\\Github\\NLP\\Projects\\data\\ltp_data_v3.4.0\\pos.model")
-
 parser = Parser()
-parser.load(r"D:\\Github\\NLP\\Projects\\data\\ltp_data_v3.4.0\\parser.model")
-
 labeller = SementicRoleLabeller()
-labeller.load(r"D:\\Github\\NLP\\Projects\\data\\ltp_data_v3.4.0\\pisrl_win.model")
+os = platform.system()
+
+if os == 'Windows':
+    segmentor.load(MODEL_PATH_WINDOWS['segmentor'])
+    postagger.load(MODEL_PATH_WINDOWS['postagger'])
+    parser.load(MODEL_PATH_WINDOWS['parser'])
+    labeller.load(MODEL_PATH_WINDOWS['labeller'])
+else:
+    segmentor.load(MODEL_PATH_LINUX['segmentor'])
+    postagger.load(MODEL_PATH_LINUX['postagger'])
+    parser.load(MODEL_PATH_LINUX['parser'])
+    labeller.load(MODEL_PATH_LINUX['labeller'])
 
 
 class Extractor:

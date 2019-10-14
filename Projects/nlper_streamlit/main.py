@@ -12,20 +12,16 @@ import matplotlib.pyplot as plt
 import matplotlib
 import streamlit as st
 
-# st.set_option('browser.serverPort', 8080)
-# st.set_option('server.port', 8081)
 import numpy as np
 import pandas as pd
 from ltp.extractor import Extractor
 
 title_holder = st.empty()
-st.write(st.get_option('browser.serverPort'))
-st.write(st.get_option('server.port'))
 
 
 def main():
     st.sidebar.header('Choice Feature to Use')
-    st.write(f"<a href='http://www.runoob.com'>baidu</a>", unsafe_allow_html=True)
+    st.write(f"[Baidu](http://www.baidu.com)", unsafe_allow_html=True)
     st.write("<h1>Helo h1", unsafe_allow_html=True)
 
     select_func = st.sidebar.selectbox('', ['Comment Extractor', 'Texts Summarization'])
