@@ -6,7 +6,7 @@ services:
     container_name: nlp_st
     restart: always
     expose:
-      - 8501
+      - "8501"
 
   nginx:
     build: ./nginx
