@@ -15,3 +15,4 @@ notMNIST_small/
 tf_logs/
 tmp/
 DeepLearning-500-questions/
+*.npy
