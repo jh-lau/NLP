@@ -17,3 +17,5 @@ tmp/
 DeepLearning-500-questions/
 *.npy
 *.pdf
+*.pptx
+*.ppt
