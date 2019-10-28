@@ -19,3 +19,4 @@ DeepLearning-500-questions/
 *.pdf
 *.pptx
 *.ppt
+!References/Papers/**/*.pdf
