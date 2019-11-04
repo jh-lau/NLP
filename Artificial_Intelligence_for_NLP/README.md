@@ -35,8 +35,6 @@
 1. [Recode](./Week_08_0824_svm_naive_bayes_decision_tree/recoding.ipynb)
 2. [Assignment - SVM, decision tree and random forest](./Week_08_0824_svm_naive_bayes_decision_tree/Assignment/assignment.ipynb)
 
-### [Project1 - NewsExtractor](http://39.100.3.165:5676/)
-
 ### Week9 - K均值聚类和神经网络初步
 1. [Recode](./Week_09_0831_kmeans_NN/recode.ipynb)
 2. TensorFlow Assignments
@@ -67,3 +65,15 @@
 3. [References](./Week_12_0921_CNN/references)
     - A critical review of RNN for sequence learning
     - Seq2Seq with neural network
+    
+### Week 14 - Seq2Seq and Attention
+1. [Assignment - Paper about Attention/ELMO/tensor2tensor](Week_14_1013_Seq2seq_Attention/assignments/assignment.ipynb)
+
+### Week 15 - Dialogue System
+1. [Recode - Boolean Search](Week_15_Dialogue_System/boolean_search.ipynb)
+### Week 16 - Final Summary
+### Projects
+- [Project1 - NewsExtractor](Projects/1_newsExtrator)
+- [Project2 - TextsSummarization](Projects/2_autoSummarization)
+- [Project3 - CommentClassifier](Projects/3_commentClassification)
+- [Project4 - ChatBot](Projects/4_chatBot)
