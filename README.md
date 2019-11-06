@@ -86,19 +86,5 @@
 
 ---
 
-## 7.Projects and Competitions
-
-### 1.[Kaggle Competitions](./Kaggle)
-
-- [Titanic Disaster](./Kaggle/Titanic)
-- [Credit Fraud](./Kaggle/Credit_Fraud)
-- [Film Recommendation Engine](./Kaggle/Film_Recommendation_Engine)
-
-### 2.Ali Tianchi
-
-- [o2o优惠券使用预测](./Kaggle/o2o优惠券使用预测_天池)
-
-### 3.Projects
-
-- [News Content Extractor](./Projects/newsExtractor)
+## 7.[Projects and Competitions](./Kaggle/README.md)
 
