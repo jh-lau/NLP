@@ -27,18 +27,19 @@ def longest_sub_palindrome_slice(text):
     return max(candidates, key=length)
 
 
-def test():
-    function = longest_sub_palindrome_slice
-    assert function('racecar') == (0, 7)
-    assert function('Racecar') == (0, 7)
-    assert function('RacecarX') == (0, 7)
-    assert function('Race carr') == (7, 9)
-    assert function('') == (0, 0)
-    assert function('something rac e car going') == (8, 21)
-    assert function('xxxxx') == (0, 5)
-    assert function('Mad am I ma dam.') == (0, 15)
-    return 'tests pass'
+# def test():
+#     function = longest_sub_palindrome_slice
+#     assert function('racecar') == (0, 7)
+#     assert function('Racecar') == (0, 7)
+#     assert function('RacecarX') == (0, 7)
+#     assert function('Race carr') == (7, 9)
+#     assert function('') == (0, 0)
+#     assert function('something rac e car going') == (8, 21)
+#     assert function('xxxxx') == (0, 5)
+#     assert function('Mad am I ma dam.') == (0, 15)
+#     return 'tests pass'
 
 
 if __name__ == '__main__':
-    print(test())
+    # print(test())
+    print(longest_sub_palindrome_slice('bbab'))

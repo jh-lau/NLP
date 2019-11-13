@@ -88,7 +88,7 @@ $$Algorithm:\ Jane\ visited\ Africa\ last\ September.\ (y^*)$$
 
 **Bleu（Bilingual Evaluation Understudy）得分**用于评估机器翻译的质量，其思想是机器翻译的结果越接近于人工翻译，则评分越高。
 
-最原始的 Bleu 将机器翻译结果中每个单词在人工翻译中出现的次数作为分子，机器翻译结果总词数作为分母得到。但是容易出现错误，例如，机器翻译结果单纯为某个在人工翻译结果中出现的单词的重复，则按照上述方法得到的 Bleu 为 1，显然有误。改进的方法是将每个单词在人工翻译结果中出现的次数作为分子，在机器翻译结果中出现的次数作为分母。
+最原始的 Bleu 将机器翻译结果中每个单词在人工翻译中出现的次数作为分子，机器翻译结果总词数作为分母得到。但是容易出现错误，例如，机器翻译结果单纯为某个在人工翻译结果中出现的单词的重复，则按照上述方法得到的 Bleu 为 1，显然有误。**改进的方法是将每个单词在人工翻译结果中出现的次数作为分子，在机器翻译结果中出现的次数作为分母**。
 
 ![Bleu-score-on-unigram](../imgs_readme/Bleu-score-on-unigram.png)
 
@@ -96,7 +96,7 @@ $$Algorithm:\ Jane\ visited\ Africa\ last\ September.\ (y^*)$$
 
 以此类推，以 n 个单词为单位的集合称为**n-gram（多元组）**，对应的 Blue（即翻译精确度）得分计算公式为：
 
-$$p_n = \frac{\sum_{\text{n-gram} \in \hat y}count_{clip}(\text{n-gram})}{\sum_{\text{n-gram} \in \hat y}count(\text{n-gram})}$$
+## $$p_n = \frac{\sum_{\text{n-gram} \in \hat y}count_{clip}(\text{n-gram})}{\sum_{\text{n-gram} \in \hat y}count(\text{n-gram})}$$
 
 对 N 个 $p_n$ 进行几何加权平均得到：
 
