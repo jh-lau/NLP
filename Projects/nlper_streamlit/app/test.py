@@ -1,14 +1,33 @@
 """
   User: Liujianhan
  """
+from functools import wraps
+
 __author__ = 'liujianhan'
-
-import multiprocessing
-
-
-def f(x):
-    return x * 2
+import threading
+import time
 
 
-with multiprocessing.Pool(multiprocessing.cpu_count()) as p:
-    print(p.map(f, list(range(10))))
+def run_time_calc(func):
+    @wraps(func)
+    def wrapper(*args):
+        start_time = time.time()
+        print(args)
+        print(*args)
+        func(*args)
+        end_time = time.time()
+        cost = end_time - start_time
+        print(f"{func.__name__} cost {cost} seconds.")
+    return wrapper
+
+
+@run_time_calc
+def add(n):
+    i = 0
+    for _ in range(n):
+        i += _
+    return i
+
+
+if __name__ == '__main__':
+    print(add(100000))
