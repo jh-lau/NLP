@@ -1,7 +1,6 @@
 """
   User: Liujianhan
  """
-__author__ = 'liujianhan'
 
 from pyhanlp import *
 
