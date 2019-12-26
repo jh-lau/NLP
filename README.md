@@ -1,7 +1,5 @@
 # NLP Road
 
-[TOC]
-
 ## 1.Math Foundation
 
 ### 1.[Math Foundation - TangYudi - study.163](./Machine_Learning_TangYuDi_net163/0_Math)
