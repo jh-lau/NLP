@@ -1,7 +1,5 @@
 # NLP Road
 
-[TOC]
-
 ## 1.Math Foundation
 
 ### 1.[Math Foundation - TangYudi - study.163](./Machine_Learning_TangYuDi_net163/0_Math)
@@ -18,7 +16,7 @@
 
 ### 2.[Machine Learning - TangYudi - study.163](./Machine_Learning_TangYuDi_net163)
 
-> 理论和实践结合得可以。
+> 理论与实践结合得可以。
 
 ---
 
