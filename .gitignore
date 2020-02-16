@@ -20,4 +20,3 @@ DeepLearning-500-questions/
 *.pptx
 *.ppt
 !References/Papers/**/*.pdf
-DataExtraction/
